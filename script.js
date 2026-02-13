@@ -1,28 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-  // --- 1. Lógica de Scroll Reveal (Animaciones) ---
+  // 1. SCROLL REVEAL (Aparición suave)
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+    threshold: 0.1
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Solo animar una vez
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Seleccionamos todos los elementos ocultos
   const elementsToAnimate = document.querySelectorAll('.hidden-element');
   elementsToAnimate.forEach(el => {
     observer.observe(el);
   });
 
-  // --- 2. Lógica para Preguntas Frecuentes (FAQ) ---
+  // 2. FAQ (Acordeón)
   const faqItems = document.querySelectorAll(".faq-item");
   if (faqItems) {
     faqItems.forEach(item => {
@@ -37,9 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
         answerDiv.hidden = isExpanded;
         icon.textContent = isExpanded ? "+" : "−";
         
-        // Estilo visual del icono
+        // Rotación del icono
         icon.style.transform = isExpanded ? "rotate(0deg)" : "rotate(45deg)";
       });
     });
+  }
+
+  // 3. AUTO-FECHA FOOTER
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
 });
