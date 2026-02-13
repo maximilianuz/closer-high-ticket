@@ -1,270 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>Tu Nombre | Closer Ético para Salud & Bienestar</title>
-  <meta name="description" content="Ayudo a profesionales de la salud a escalar su impacto. Venta consultiva alineada con el propósito de ayudar." />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    /* --- ESTILO: CLEAN & CLINICAL DARK --- */
-    :root {
-      --bg-body: #0a0a0a;
-      --bg-card: #141414;
-      --text-main: #B0B3B8;
-      --text-white: #F5F5F5;
-      --accent: #D4AF37;        /* Dorado (Excelencia) */
-      --accent-soft: #2c3e50;   /* Azul Clínico (Seriedad) */
-      --border: #2a2a2a;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <title>Tu Nombre | Closer para Profesionales de la Salud</title>
+    <meta name="description" content="Ayudo a Entrenadores, Nutricionistas y Psicólogos a escalar su impacto. Admisión de pacientes y venta consultiva ética." />
     
-    body {
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.7; /* Un poco más de aire para lectura relajada */
-      font-size: 16px;
-    }
-
-    h1, h2, h3 { color: var(--text-white); font-weight: 500; letter-spacing: -0.5px; }
-    h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 1.5rem; }
-    h2 { font-size: 2rem; margin-bottom: 1rem; }
-    strong { color: var(--text-white); font-weight: 600; }
-    a { text-decoration: none; transition: 0.3s; color: inherit; }
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tuusuario.github.io/">
+    <meta property="og:title" content="Tu Nombre | Closer Ético Salud & Fitness">
+    <meta property="og:description" content="Gestión de admisiones High Ticket para profesionales que priorizan el bienestar de sus pacientes.">
+    <meta property="og:image" content="https://tuservidor.com/tu-foto-preview.jpg"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-    .text-gold { color: var(--accent); }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    /* Botones */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 32px;
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .btn-primary {
-      background-color: var(--accent);
-      color: #000;
-      border: 1px solid var(--accent);
-    }
-    .btn-primary:hover {
-      background-color: #F8D568;
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text-white);
-    }
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* --- HERO --- */
-    header { padding: 30px 0; position: absolute; width: 100%; top: 0; z-index: 10; }
-    .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.1rem; font-weight: 600; color: var(--text-white); }
-
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding-top: 80px;
-      background: radial-gradient(circle at 70% 30%, #1a1a1a 0%, #0a0a0a 60%);
-    }
-    
-    .mission-tag {
-      background: rgba(212, 175, 55, 0.1);
-      color: var(--accent);
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      display: inline-block;
-    }
-
-    /* --- VALUE PROPOSITION (NUEVO) --- */
-    .section-padding { padding: 100px 0; border-top: 1px solid var(--border); }
-    
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-    
-    .value-card {
-      background: var(--bg-card);
-      padding: 40px 30px;
-      border-top: 3px solid var(--border);
-      transition: 0.3s;
-    }
-    .value-card:hover { 
-      border-top-color: var(--accent); 
-      transform: translateY(-5px);
-    }
-    .value-card h3 { font-size: 1.25rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-    .value-card p { font-size: 0.95rem; color: #999; }
-
-    /* --- ABOUT (EXPERIENCE) --- */
-    .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .quote-box {
-      border-left: 4px solid var(--accent);
-      padding-left: 20px;
-      margin: 30px 0;
-      font-style: italic;
-      color: #ddd;
-    }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      .about-split { grid-template-columns: 1fr; }
-      .hero { text-align: left; }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css" /> 
 </head>
-<body>
+<body class="dark">
 
-  <header>
-    <div class="container">
-      <div class="nav-flex">
-        <div class="logo">TU MARCA<span class="text-gold">.</span></div>
-        <div>
-          <a href="#" style="margin-left: 20px; color: #fff;"><i class="fab fa-linkedin"></i></a>
+    <header class="header">
+        <div class="container navbar-container">
+            <div class="logo-text">
+                <h1>TU NOMBRE<span style="color:var(--accent-primary)">.</span></h1>
+                <p class="slogan">Admisión & Ventas High Ticket</p>
+            </div>
+            <nav class="navigation">
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
         </div>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="hero">
-    <div class="container">
-      <div style="max-width: 700px;">
-        <span class="mission-tag">Para Profesionales de la Salud & Bienestar</span>
+    <main>
+        <section class="hero">
+            <div class="hero-bg"></div> <div class="container hero-container">
+                <div class="hero-content hidden-element">
+                    <span class="badge">Especialista en Salud & Bienestar</span>
+                    <h2 class="hero-title">
+                        Tu propósito es <span class="gradient-text">ayudar.</span><br>
+                        Mi misión es que llegues a <span class="highlight-accent">más personas.</span>
+                    </h2>
+                    <p class="mantra">
+                        Me integro en tu equipo para asegurar que el valor de tu servicio llegue a quien lo necesita, gestionando la admisión de pacientes con ética y empatía.
+                    </p>
+                    <div style="margin-top: 2rem;">
+                        <a href="https://calendly.com/tu-link" target="_blank" class="cta">Agendar Entrevista</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="filosofia" class="section section-light">
+            <div class="container">
+                <h3 class="section-title hidden-element">Potenciando tu capacidad de sanar</h3>
+                <div class="cards-grid">
+                    <div class="card card--prevention hidden-element">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Prevención Activa</h3>
+                        <p>Cada persona que no entra a tu programa pierde una oportunidad de mejora. Mi trabajo es derribar sus barreras mentales para que accedan a tu ayuda.</p>
+                    </div>
+                    <div class="card card--scale hidden-element">
+                        <div class="card-icon">
+                           <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Escala Humana</h3>
+                        <p>Tú tienes un límite de horas, pero no de impacto. Al filtrar y cerrar programas High Ticket, te permito ayudar con mayor profundidad a los comprometidos.</p>
+                    </div>
+                    <div class="card card--ethics hidden-element">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Soporte Ético</h3>
+                        <p>Protejo tu autoridad. Realizo el triaje inicial para que tú solo dediques tiempo a transformar vidas, no a discutir precios o perseguir pagos.</p>
+                    </div>
+                    <div class="card card--data hidden-element">
+                        <div class="card-icon">
+                           <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Análisis Clínico</h3>
+                        <p>Como perfil analítico (INTJ), no solo "vendo". Te entrego reportes detallados de por qué tus pacientes compran o no, para mejorar tu oferta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section">
+            <div class="container text-section-container">
+                <h2 class="section-title hidden-element">Experiencia Real en Salud</h2>
+                <div class="manifesto-body hidden-element">
+                    <p class="manifesto-intro">"No soy un vendedor de cursos. Vengo del mundo real."</p>
+                    <p>A diferencia de los "closers" genéricos, cuento con <strong>experiencia operativa en clínicas y sector salud</strong>. Entiendo la delicadeza que requiere hablar de salud mental o física.</p>
+                    <p>Hablo tu idioma: triaje, diagnóstico, paciente, tratamiento. Mi venta es la consecuencia de un diagnóstico bien hecho.</p>
+                    
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Madurez comercial (+40 años)</li>
+                        <li><i class="fas fa-check"></i> Enfoque consultivo sin presión</li>
+                        <li><i class="fas fa-check"></i> Manejo de objeciones emocionales</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         
-        <h1>
-          Tu propósito es ayudar.<br>
-          <span class="text-gold">Mi misión es que llegues a más personas.</span>
-        </h1>
-
-        <p style="font-size: 1.1rem; max-width: 600px; margin-bottom: 35px; color: #aaa;">
-          Comprendo que tu trabajo es prevención, soporte y mejora de vida. Me integro en tu equipo para asegurar que ese valor llegue a quien lo necesita, gestionando la admisión de pacientes con ética y empatía.
-        </p>
-        
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-          <a href="https://calendly.com/tu-link" class="btn btn-primary">
-            Amplificar mi Impacto
-          </a>
-          <a href="#proposito" class="btn btn-outline">
-            Ver filosofía
-          </a>
+        <section id="faq" class="section section-light">
+            <div class="container text-section-container">
+                <h2 class="section-title hidden-element">Preguntas Frecuentes</h2>
+                
+                <div class="faq-container hidden-element">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Con qué nichos trabajas específicamente?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Me especializo en Nutricionistas, Entrenadores Personales, Psicólogos y Coaches de Salud que ofrecen programas High Ticket (generalmente +$500 USD) y requieren un trato humano y experto.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cómo es tu modelo de compensación?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Trabajo a resultados (comisión por venta cerrada), lo que alinea mis intereses con los tuyos. Busco relaciones ganar-ganar a largo plazo.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Necesito tener leads (interesados) actuales?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" hidden>
+                            <p>Sí. Mi especialidad es convertir el tráfico que ya tienes (Appointment Setting y Closing). Para que la colaboración sea rentable, necesitas tener flujo de personas interesadas o una base de datos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contacto" class="footer">
+        <div class="container footer-container">
+            <div class="footer-cta hidden-element">
+                <h2>¿Expandamos tu propósito?</h2>
+                <p>Si tienes un programa validado, delega la admisión en alguien de confianza.</p>
+                
+                <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+                    <a href="https://calendly.com/tu-link" class="cta">Agendar Reunión</a>
+                    <a href="mailto:tuemail@gmail.com" class="cta cta-outline">Enviar Email</a>
+                </div>
+            </div>
+            
+            <div class="footer-copy">
+                <p>Copyright © 2026 Tu Nombre. "Agregando valor al valor que ya aportas".</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <section id="proposito" class="section-padding">
-    <div class="container">
-      <div style="text-align: left; max-width: 700px; margin-bottom: 40px;">
-        <span class="text-gold" style="font-size: 0.9rem; letter-spacing: 1px;">ALINEACIÓN DE VALORES</span>
-        <h2>Potenciando tu capacidad de sanar</h2>
-        <p>
-          Ya aportas un valor inmenso en tus sesiones. Mi rol no es "vender", sino derribar las barreras mentales que impiden a tus pacientes acceder a esa ayuda.
-        </p>
-      </div>
-      
-      <div class="grid-3">
-        <div class="value-card">
-          <h3><i class="fas fa-hand-holding-heart text-gold"></i> Prevención Activa</h3>
-          <p>Entiendo que tu servicio previene problemas mayores. Cada persona que no entra a tu programa, es una persona que pierde esa oportunidad de mejora. Mi trabajo es que no la pierdan.</p>
-        </div>
-        <div class="value-card">
-          <h3><i class="fas fa-users text-gold"></i> Escala Humana</h3>
-          <p>Tú tienes un límite de horas, pero no de impacto. Al filtrar y cerrar programas High Ticket, te permito ayudar con mayor profundidad a quienes están realmente comprometidos.</p>
-        </div>
-        <div class="value-card">
-          <h3><i class="fas fa-shield-alt text-gold"></i> Soporte Ético</h3>
-          <p>Protejo tu energía y tu autoridad. Realizo el triaje inicial para que tú solo dediques tu tiempo a transformar vidas, no a discutir precios o perseguir pagos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <a href="https://wa.me/54911xxxxxxx" class="floating-whatsapp" target="_blank" aria-label="Chat en WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-  <section class="section-padding" style="background-color: #0d0d0d;">
-    <div class="container">
-      <div class="about-split">
-        <div>
-          <h2>Un aliado que habla tu idioma.</h2>
-          <p>
-            No soy un vendedor agresivo de "marketing digital". Tengo <strong>experiencia real en clínica y sector salud</strong>.
-          </p>
-          <p class="mt-2">
-            Sé lo que significa el trato con pacientes y la delicadeza que requiere hablar de salud mental o física.
-          </p>
-          
-          <div class="quote-box">
-            "Colaboro agregando valor al valor que tú ya aportas. Soy el puente entre la necesidad de tu paciente y la solución que tú ofreces."
-          </div>
-
-          <ul style="margin-top: 20px; list-style: none;">
-            <li style="margin-bottom: 10px; color:#ccc;">
-              <i class="fas fa-check-circle text-gold" style="margin-right:10px;"></i>
-              Manejo de objeciones desde la empatía.
-            </li>
-            <li style="margin-bottom: 10px; color:#ccc;">
-              <i class="fas fa-check-circle text-gold" style="margin-right:10px;"></i>
-              Comprensión del proceso terapéutico/entrenamiento.
-            </li>
-          </ul>
-        </div>
-        
-        <div style="background: #181818; height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 4px; border: 1px dashed #333;">
-           <i class="fas fa-camera" style="font-size: 2rem; color: #333; margin-bottom: 10px;"></i>
-           <span style="color: #666;">[ Tu Foto Profesional ]</span>
-           <span style="font-size: 0.8rem; color: #444; margin-top: 10px;">Transmite confianza y calma</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-padding" style="text-align: center;">
-    <div class="container">
-      <h2>Expandamos tu propósito</h2>
-      <p style="margin: 20px auto; max-width: 600px; color: #888;">
-        Si tienes un programa validado y una misión clara, permíteme encargarme de que más personas digan "Sí" a su propia transformación contigo.
-      </p>
-      
-      <a href="https://wa.me/54911xxxxxxx" class="btn btn-primary">
-        <i class="fab fa-whatsapp"></i> Conversar sobre tu Misión
-      </a>
-      
-      <p style="margin-top: 30px; font-size: 0.9rem;">
-        <a href="mailto:tucorreo@gmail.com" style="color: #666; text-decoration: underline;">tucorreo@gmail.com</a>
-      </p>
-    </div>
-  </section>
-
-  <footer style="padding: 40px 0; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85rem; color: #444;">
-    <div class="container">
-      <p>&copy; 2026 Tu Nombre. Ayudando a quienes ayudan.</p>
-    </div>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
