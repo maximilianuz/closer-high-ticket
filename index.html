@@ -237,20 +237,26 @@
             </div>
         </section>
 
-        <section id="agenda" class="section footer-cta-section" style="padding-top: 4rem; padding-bottom: 4rem;">
+       <section id="agenda" class="section footer-cta-section">
             <div class="container footer-cta-container hidden-element">
-                <h2 class="huge-cta-title" style="margin-bottom: 1rem;">¿Listo para delegar?</h2>
-                <p class="huge-cta-sub" style="margin-bottom: 2rem;">Selecciona el día y horario que mejor te quede en el calendario a continuación.</p>
+                <h2 class="huge-cta-title">¿Listo para delegar?</h2>
+                <p class="huge-cta-sub">Selecciona el día y horario que mejor te quede en el calendario a continuación.</p>
                 
-                <div style="margin-bottom: 3rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">¿Prefieres escribirme un correo?</span>
-                    <a href="mailto:contacto.maximilianoc@gmail.com" title="Abrir correo electrónico" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--text-main); color: var(--bg-main); font-size: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div style="margin-bottom: 3rem;">
+                    <span class="email-fallback-text">¿Prefieres escribirme un correo?</span>
+                    <a href="mailto:contacto.maximilianoc@gmail.com" title="Abrir correo electrónico" class="email-fallback-btn">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
 
-                <div style="background: white; border-radius: 15px; overflow: hidden; max-width: 1000px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <iframe src="https://calendly.com/contacto-maximilianoc" width="100%" height="700" frameborder="0" title="Agenda Calendly"></iframe>
+                <div class="agenda-container">
+                    <iframe 
+                        src="https://calendly.com/contacto-maximilianoc" 
+                        width="100%" 
+                        height="700" 
+                        frameborder="0" 
+                        title="Agenda Calendly">
+                    </iframe>
                 </div>
             </div>
         </section>
