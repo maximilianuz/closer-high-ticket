@@ -1,83 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  const themeToggle = document.querySelector(".toggle-theme");
-  const header = document.querySelector(".header");
+    const body = document.body;
+    const themeToggle = document.querySelector(".toggle-theme");
 
-  // 1. TEMA DARK/LIGHT
-  const applyTheme = (theme) => {
-    body.classList.remove("dark", "light");
-    body.classList.add(theme);
-    if (themeToggle) {
+    // TEMA
+    const applyTheme = (theme) => {
+        body.className = theme;
         themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
-    }
-    localStorage.setItem("maxi-theme", theme);
-  };
+        localStorage.setItem("maxi-theme", theme);
+    };
 
-  const savedTheme = localStorage.getItem("maxi-theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  if (savedTheme) {
+    const savedTheme = localStorage.getItem("maxi-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     applyTheme(savedTheme);
-  } else {
-    applyTheme(prefersDark ? "dark" : "light");
-  }
 
-  if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      const newTheme = body.classList.contains("dark") ? "light" : "dark";
-      applyTheme(newTheme);
+        applyTheme(body.className === "dark" ? "light" : "dark");
     });
-  }
 
-  // 2. HEADER SCROLL EFFECT (Sombra dinámica al bajar)
-  if (header) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 20) {
-        // Aplica una sombra suave dependiendo si es tema claro u oscuro
-        const shadowColor = body.classList.contains("light") ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.5)";
-        header.style.boxShadow = `0 4px 20px ${shadowColor}`;
-      } else {
-        header.style.boxShadow = "none";
-      }
+    // REVEAL
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
+
+    // FAQ
+    document.querySelectorAll(".faq-question").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const answer = btn.nextElementSibling;
+            answer.hidden = !answer.hidden;
+            btn.querySelector("span").textContent = answer.hidden ? "+" : "−";
+        });
     });
-  }
 
-  // 3. SCROLL REVEAL (Animaciones)
-  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Deja de observar una vez que ya apareció
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
-
-  // 4. FAQ ACORDEÓN (Animación limpia de + a x)
-  document.querySelectorAll(".faq-item").forEach(item => {
-    const btn = item.querySelector(".faq-question");
-    const answer = item.querySelector(".faq-answer");
-    const icon = item.querySelector(".faq-icon");
-
-    if (btn && answer && icon) {
-      // Aseguramos que la transición sea fluida
-      icon.style.transition = "transform 0.3s ease";
-      icon.style.display = "inline-block"; // Necesario para que rote bien
-
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", !expanded);
-        answer.hidden = expanded;
-        
-        // Rota 45 grados para hacer una "x" de cierre
-        icon.style.transform = expanded ? "rotate(0deg)" : "rotate(45deg)";
-      });
-    }
-  });
-
-  // 5. AUTO-FECHA FOOTER
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+    // AÑO
+    document.getElementById('year').textContent = new Date().getFullYear();
 });
