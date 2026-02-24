@@ -2,7 +2,7 @@
 
 :root {
     /* MODO OSCURO (Default) */
-    --bg-main: #070707;       
+    --bg-main: #070707;        
     --bg-secondary: #0F0F0F;  
     --border-dark: #222222;   
     
@@ -20,14 +20,14 @@
 
 /* MODO CLARO (Light Theme) */
 body.light {
-    --bg-main: #FAFAFA;       
+    --bg-main: #FAFAFA;        
     --bg-secondary: #FFFFFF;  
     --border-dark: #E5E5E5;   
     
     --text-primary: #111111;
-    --text-secondary: #555555; 
+    --text-secondary: #444444; /* Contraste mejorado para pantallas brillantes */
     
-    --accent-primary: #B38F48; /* Dorado un poco más oscuro para mejor lectura en blanco */
+    --accent-primary: #B38F48; 
     --hero-gradient: radial-gradient(circle at 30% 50%, #FFFFFF 0%, #F0F0F0 70%);
     --header-bg: rgba(255, 255, 255, 0.95);
 }
@@ -70,6 +70,25 @@ h1, h2, h3, h4 { font-family: var(--font-heading); margin: 0; }
 }
 .nav-cta:hover { background: var(--accent-primary); color: #000; border-color: var(--accent-primary); }
 body.light .nav-cta { color: var(--text-primary); }
+
+/* Estilos para el ícono de correo en el nav */
+.nav-controls a[href^="mailto:"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.nav-controls a[href^="mailto:"]:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border-dark);
+    color: var(--accent-primary) !important;
+    transform: translateY(-2px);
+}
 
 /* --- HERO SPLIT --- */
 .hero-split {
@@ -179,6 +198,51 @@ body.light .card { box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
 .huge-cta-sub { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem; }
 .btn-large { padding: 22px 45px; font-size: 1.1rem; }
 
+/* --- SECCIÓN AGENDA (CALENDLY) --- */
+.agenda-container {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-dark);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    transition: var(--transition);
+}
+body.light .agenda-container {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.email-fallback-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    color: var(--bg-main);
+    font-size: 1.5rem;
+    transition: var(--transition);
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.email-fallback-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: var(--accent-primary);
+    color: #000;
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3);
+}
+
+.email-fallback-text {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin-bottom: 12px;
+}
+
 /* --- FOOTER --- */
 .footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-dark); transition: 0.3s; }
 .footer p { margin: 0; font-size: 0.9rem; color: var(--text-primary); }
@@ -206,4 +270,9 @@ body.light .card { box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
     .grid-minimal { grid-template-columns: 1fr; gap: 2.5rem; }
     .bio-grid-open { grid-template-columns: 1fr; gap: 2rem; }
     .huge-cta-title { font-size: 2.5rem; }
+    
+    .nav-controls { gap: 0.5rem; }
+    .nav-cta { padding: 6px 12px; font-size: 0.8rem; }
+    
+    .agenda-container iframe { height: 800px; }
 }
