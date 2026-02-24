@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         applyTheme(body.className === "dark" ? "light" : "dark");
     });
 
-    // 2. REVEAL (INTERSECTION OBSERVER)
+    // 2. REVEAL ANIMATION
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -27,7 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
 
-    // 3. AÑO DINÁMICO
+    // 3. FAQ ACORDEÓN
+    document.querySelectorAll(".faq-question").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector("span:last-child");
+            const isHidden = answer.hidden;
+            answer.hidden = !isHidden;
+            icon.textContent = isHidden ? "−" : "+";
+        });
+    });
+
+    // 4. AÑO
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
