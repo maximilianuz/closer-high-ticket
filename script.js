@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const themeToggle = document.querySelector(".toggle-theme");
 
-    // 1. GESTIÓN DE TEMA (MODO OSCURO/CLARO)
+    // 1. GESTIÓN DE TEMAS
     const applyTheme = (theme) => {
         body.className = theme;
         themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         applyTheme(body.className === "dark" ? "light" : "dark");
     });
 
-    // 2. INTERSECTION OBSERVER (REVEAL)
+    // 2. REVEAL ANIMATION
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
 
-    // 3. FAQ ACORDEÓN CORREGIDO
+    // 3. FAQ ACORDEÓN
     document.querySelectorAll(".faq-question").forEach(btn => {
         btn.addEventListener("click", () => {
             const answer = btn.nextElementSibling;
@@ -36,20 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const isHidden = answer.hidden;
             answer.hidden = !isHidden;
             icon.textContent = isHidden ? "−" : "+";
-            
-            // Opcional: Cerrar otros si se abre uno
-            if (isHidden) {
-                document.querySelectorAll(".faq-answer").forEach(ans => {
-                    if (ans !== answer) ans.hidden = true;
-                });
-                document.querySelectorAll(".faq-question span:last-child").forEach(i => {
-                    if (i !== icon) i.textContent = "+";
-                });
-            }
         });
     });
 
-    // 4. AUTO-AÑO FOOTER
+    // 4. AUTO-FECHA
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
