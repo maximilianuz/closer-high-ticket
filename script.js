@@ -1,5 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. ANIMACIONES DE SCROLL
+  const body = document.body;
+  const themeToggle = document.querySelector(".toggle-theme");
+
+  // 1. TEMA DARK/LIGHT
+  const applyTheme = (theme) => {
+    body.classList.remove("dark", "light");
+    body.classList.add(theme);
+    if (themeToggle) {
+        themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+    }
+    localStorage.setItem("maxi-theme", theme);
+  };
+
+  const savedTheme = localStorage.getItem("maxi-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    applyTheme(prefersDark ? "dark" : "light");
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const newTheme = body.classList.contains("dark") ? "light" : "dark";
+      applyTheme(newTheme);
+    });
+  }
+
+  // 2. SCROLL REVEAL (Animaciones)
   const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -12,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
 
-  // 2. FAQ INTERACTIVO
+  // 3. FAQ ACORDEÓN
   document.querySelectorAll(".faq-item").forEach(item => {
     const btn = item.querySelector(".faq-question");
     const answer = item.querySelector(".faq-answer");
@@ -27,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 3. AUTO-AÑO FOOTER
+  // 4. AUTO-FECHA FOOTER
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
