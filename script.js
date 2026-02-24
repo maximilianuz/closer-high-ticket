@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const themeToggle = document.querySelector(".toggle-theme");
 
-    // TEMA
+    // 1. GESTIÓN DE TEMA (MODO OSCURO/CLARO)
     const applyTheme = (theme) => {
         body.className = theme;
         themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         applyTheme(body.className === "dark" ? "light" : "dark");
     });
 
-    // REVEAL
+    // 2. INTERSECTION OBSERVER (REVEAL)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -27,15 +27,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
 
-    // FAQ
+    // 3. FAQ ACORDEÓN CORREGIDO
     document.querySelectorAll(".faq-question").forEach(btn => {
         btn.addEventListener("click", () => {
             const answer = btn.nextElementSibling;
-            answer.hidden = !answer.hidden;
-            btn.querySelector("span").textContent = answer.hidden ? "+" : "−";
+            const icon = btn.querySelector("span:last-child");
+            
+            const isHidden = answer.hidden;
+            answer.hidden = !isHidden;
+            icon.textContent = isHidden ? "−" : "+";
+            
+            // Opcional: Cerrar otros si se abre uno
+            if (isHidden) {
+                document.querySelectorAll(".faq-answer").forEach(ans => {
+                    if (ans !== answer) ans.hidden = true;
+                });
+                document.querySelectorAll(".faq-question span:last-child").forEach(i => {
+                    if (i !== icon) i.textContent = "+";
+                });
+            }
         });
     });
 
-    // AÑO
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // 4. AUTO-AÑO FOOTER
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
