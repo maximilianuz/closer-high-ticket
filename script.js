@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const themeToggle = document.querySelector(".toggle-theme");
 
-    // 1. GESTIÓN DE TEMAS
+    // 1. TEMA
     const applyTheme = (theme) => {
         body.className = theme;
         themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         applyTheme(body.className === "dark" ? "light" : "dark");
     });
 
-    // 2. REVEAL ANIMATION
+    // 2. REVEAL (INTERSECTION OBSERVER)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -27,19 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
 
-    // 3. FAQ ACORDEÓN
-    document.querySelectorAll(".faq-question").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const answer = btn.nextElementSibling;
-            const icon = btn.querySelector("span:last-child");
-            
-            const isHidden = answer.hidden;
-            answer.hidden = !isHidden;
-            icon.textContent = isHidden ? "−" : "+";
-        });
-    });
-
-    // 4. AUTO-FECHA
+    // 3. AÑO DINÁMICO
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
