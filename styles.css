@@ -1,36 +1,36 @@
 :root {
     --bg-main: #050505;
-    --bg-spotlight: radial-gradient(circle at center, #111111 0%, #050505 100%);
-    --accent-gold: #D1A751; /* Champagne Gold */
-    --accent-muted: rgba(209, 167, 81, 0.4);
+    --bg-spotlight: radial-gradient(circle at 50% 0%, #151515 0%, #050505 50%);
+    --accent: #D1A751; /* Dorado Champagne */
+    --accent-muted: rgba(209, 167, 81, 0.3);
     --text-pure: #ffffff;
     --text-silver: #a1a1a1;
-    --font-luxury: 'Playfair Display', serif;
-    --font-modern: 'Inter', sans-serif;
+    --font-h: 'Playfair Display', serif; /* Elegancia editorial */
+    --font-b: 'Inter', sans-serif; /* Modernidad y lectura limpia */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; background-color: var(--bg-main); }
 
 body {
-    font-family: var(--font-modern);
+    font-family: var(--font-b);
     background: var(--bg-main);
     color: var(--text-pure);
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
 }
 
-/* EFECTO DE LUZ DE ESTUDIO EN TODA LA WEB */
+/* EFECTO SPOTLIGHT (Luz de estudio en el fondo) */
 main {
-    background: radial-gradient(circle at 50% 0%, #151515 0%, #050505 50%);
+    background: var(--bg-spotlight);
 }
 
-/* NAVBAR: MÁS ESPACIADA Y MINIMALISTA */
+/* NAVBAR: Estética de Marca Registrada */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 6%;
+    padding: 40px 8%;
     position: fixed;
     top: 0; width: 100%; z-index: 1000;
     backdrop-filter: blur(15px);
@@ -38,12 +38,12 @@ main {
     border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
+.logo-link { text-decoration: none; color: inherit; }
 .logo-link h2 {
-    font-family: var(--font-luxury);
-    letter-spacing: 8px; /* Drama tipográfico */
-    font-size: 1.2rem;
+    font-family: var(--font-h);
+    letter-spacing: 10px; /* Drama tipográfico */
+    font-size: 1.1rem;
     font-weight: 700;
-    color: var(--text-pure);
     text-transform: uppercase;
 }
 
@@ -53,12 +53,13 @@ main {
     letter-spacing: 3px;
     color: var(--text-silver);
     text-decoration: none;
+    margin-left: 35px;
     transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.navbar nav a:hover { color: var(--accent-gold); letter-spacing: 4px; }
+.navbar nav a:hover { color: var(--accent); letter-spacing: 4px; }
 
-/* HERO: IMPACTO CINEMÁTICO */
+/* HERO SECTION */
 .hero {
     height: 100vh;
     display: flex;
@@ -70,13 +71,13 @@ main {
 }
 
 .hero h1 {
-    font-family: var(--font-luxury);
-    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-family: var(--font-h);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
     font-style: italic;
     line-height: 1.1;
     margin: 30px 0;
     font-weight: 400;
-    letter-spacing: -1px; /* Para que el itálico se vea editorial */
+    letter-spacing: -1px;
 }
 
 .profile {
@@ -85,38 +86,61 @@ main {
     object-fit: cover;
     border: 1px solid var(--accent-muted);
     padding: 10px;
-    background: radial-gradient(circle, rgba(209, 167, 81, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(209, 167, 81, 0.15) 0%, transparent 70%);
 }
 
 .tagline {
-    font-size: 0.9rem;
-    letter-spacing: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 40px;
+    color: var(--accent);
+    margin-bottom: 10px;
 }
 
-/* BANDA DE AUTORIDAD: MÁS IMPONENTE */
+.niche-context {
+    color: var(--text-silver);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    max-width: 600px;
+}
+
+/* SHAPE DIVIDER */
+.shape-divider {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    line-height: 0; transform: rotate(180deg);
+}
+.shape-divider svg { width: calc(100% + 1.3px); height: 80px; }
+.shape-divider .shape-fill { fill: #080808; }
+
+/* BANDA DE AUTORIDAD */
 .authority-band {
-    padding: 60px 0;
     background: #080808;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 60px 0;
     display: flex;
     justify-content: center;
-    gap: 60px;
-    font-size: 0.8rem;
+    align-items: center;
+    gap: 50px;
+    font-size: 0.75rem;
     letter-spacing: 4px;
     color: var(--text-silver);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-/* Z-PATTERN: EL ZIGZAG DE REVISTA */
-.section { padding: 160px 10%; }
+.dot { color: var(--accent); font-size: 1.2rem; }
+
+/* SECCIONES: Espaciado "Luxury Air" */
+.section { 
+    padding: 180px 10%; /* Espacio generoso entre bloques */
+    max-width: 1400px; 
+    margin: auto; 
+}
 
 .z-pattern {
     display: flex;
     align-items: center;
-    gap: 10%;
+    gap: 8%;
     margin-bottom: 100px;
 }
 
@@ -124,50 +148,56 @@ main {
 
 .z-text { flex: 1.2; }
 .z-text h2 {
-    font-size: 3.5rem;
-    margin-bottom: 40px;
-    font-family: var(--font-luxury);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: 35px;
+    font-family: var(--font-h);
 }
 
 .z-text p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-silver);
     margin-bottom: 25px;
     font-weight: 300;
 }
 
-.z-image { flex: 0.8; position: relative; }
+.z-image { flex: 0.8; text-align: center; }
 .z-image img {
     width: 100%;
     filter: grayscale(100%) contrast(110%);
     transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 .z-image:hover img { filter: grayscale(0%) contrast(100%); transform: scale(1.02); }
 
-/* CAJA DE PROPÓSITO: EL CORAZÓN DEL HIGH TICKET */
+/* CAJA DE COLABORACIÓN (Purpose Box) */
 .purpose-box {
     background: #0a0a0a;
-    padding: 80px 60px;
-    border: 1px solid rgba(209, 167, 81, 0.2);
-    position: relative;
-}
-.purpose-box::before {
-    content: '"';
-    position: absolute;
-    top: 20px; left: 40px;
-    font-family: var(--font-luxury);
-    font-size: 5rem;
-    color: var(--accent-gold);
-    opacity: 0.3;
+    padding: 100px 60px;
+    border: 1px solid rgba(209, 167, 81, 0.1);
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
 }
 
-/* BOTONES: ESTILO SAVILE ROW */
+.niche-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.niche-list li { color: var(--text-silver); font-size: 0.9rem; letter-spacing: 1px; }
+.niche-list b { color: var(--text-pure); }
+
+/* BOTÓN DE ACCIÓN (CTA) */
 .cta {
     display: inline-block;
-    padding: 20px 50px;
-    border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
+    padding: 22px 60px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -177,13 +207,54 @@ main {
 }
 
 .cta:hover {
-    background: var(--accent-gold);
+    background: var(--accent);
     color: #000;
     box-shadow: 0 20px 40px rgba(209, 167, 81, 0.2);
     transform: translateY(-5px);
 }
 
-.cta.solid { background: var(--accent-gold); color: #000; }
+.cta.solid { background: var(--accent); color: #000; }
+
+/* FOOTER */
+.footer {
+    padding: 120px 20px 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.social-links { margin-bottom: 40px; }
+.social-links a {
+    color: var(--text-silver);
+    font-size: 1.8rem;
+    margin: 0 25px;
+    transition: 0.4s;
+}
+.social-links a:hover { color: var(--accent); }
+
+.copyright {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: #444;
+    text-transform: uppercase;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed;
+    width: 60px; height: 60px;
+    bottom: 40px; right: 40px;
+    background: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    display: flex;
+    align-items: center; justify-content: center;
+    font-size: 30px;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.whatsapp-float:hover { transform: translateY(-5px); }
 
 /* ANIMACIONES "SLOW REVEAL" */
 .fade-in {
@@ -194,12 +265,17 @@ main {
 
 .fade-in.show { opacity: 1; transform: translateY(0); }
 
-/* MOBILE OPTIMIZATION */
+.left-delay { transition-delay: 0.2s; }
+.right-delay { transition-delay: 0.4s; }
+
+/* RESPONSIVO */
 @media (max-width: 900px) {
-    .navbar { padding: 20px; justify-content: center; }
+    .navbar { padding: 25px 5%; justify-content: center; }
     .navbar nav { display: none; }
-    .z-pattern, .z-pattern.reverse { flex-direction: column; text-align: center; }
-    .hero h1 { font-size: 3rem; }
-    .z-text h2 { font-size: 2.5rem; }
-    .authority-band { flex-direction: column; gap: 20px; align-items: center; }
+    .hero h1 { font-size: 2.8rem; }
+    .authority-band { flex-direction: column; gap: 20px; padding: 40px 0; }
+    .dot { display: none; }
+    .z-pattern, .z-pattern.reverse { flex-direction: column; text-align: center; gap: 40px; }
+    .section { padding: 100px 6%; }
+    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
 }
