@@ -31,6 +31,23 @@ const updateNavbarState = () => {
 window.addEventListener('scroll', updateNavbarState);
 updateNavbarState();
 
+const trackedScrollDepth = new Set();
+const depthMarks = [25, 50, 75, 100];
+const trackScrollDepth = () => {
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (documentHeight <= 0) return;
+    const current = Math.round((window.scrollY / documentHeight) * 100);
+
+    depthMarks.forEach(mark => {
+        if (current >= mark && !trackedScrollDepth.has(mark)) {
+            trackedScrollDepth.add(mark);
+            trackEvent('scroll_depth', { depth: mark });
+        }
+    });
+};
+window.addEventListener('scroll', trackScrollDepth);
+trackScrollDepth();
+
 const trackedCtas = document.querySelectorAll('[data-track]');
 trackedCtas.forEach(cta => {
     cta.addEventListener('click', () => {
@@ -40,6 +57,13 @@ trackedCtas.forEach(cta => {
 
 const applicationForm = document.getElementById('applicationForm');
 if (applicationForm) {
+    let applicationStarted = false;
+    applicationForm.addEventListener('input', () => {
+        if (!applicationStarted) {
+            applicationStarted = true;
+            trackEvent('application_started');
+        }
+    });
     applicationForm.addEventListener('submit', event => {
         event.preventDefault();
 

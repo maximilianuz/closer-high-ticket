@@ -488,6 +488,7 @@ main {
 
 @media (max-width: 900px) {
     .faq-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
 
     .mobile-sticky-cta {
         display: block;
@@ -508,4 +509,56 @@ main {
     }
 
     body { padding-bottom: 52px; }
+}
+
+
+.steps-section h2 {
+    font-family: var(--font-h);
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 30px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.step-card {
+    border: 1px solid rgba(209, 167, 81, 0.18);
+    background: #0a0a0a;
+    padding: 28px;
+}
+
+.step-number {
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-size: 0.82rem;
+}
+
+.step-card h3 {
+    font-family: var(--font-h);
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.step-card p {
+    color: var(--text-silver);
+    font-size: 0.95rem;
+}
+
+.consent-line {
+    margin-top: 14px;
+    margin-bottom: 8px;
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-silver);
+}
+
+.consent-line input {
+    margin-top: 4px;
+    width: 16px;
+    height: 16px;
 }
