@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Maximiliano.C",
+  "jobTitle": "Closer de Ventas Consultivas",
+  "description": "Closer especializado en ventas high ticket y consultivas para el sector del fitness, bienestar y alto rendimiento.",
+  "url": "https://maximilianoc.com",
+  "knowsAbout": ["Ventas High Ticket", "Venta Consultiva", "Cierre de Ventas", "Fitness Premium"]
+}
