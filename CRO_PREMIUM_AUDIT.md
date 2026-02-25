@@ -20,7 +20,7 @@
 
 ## P1.1 — Reescribir el hero con promesa + mecanismo + filtro
 Estructura sugerida encima del primer scroll:
-1. **Promesa concreta**: “Ayudo a marcas de salud premium a convertir más llamadas cualificadas en clientes high ticket sin scripts agresivos.”
+1. **Promesa concreta**: “Ayudo a marcas personales (entrenadores personales, psicólogos, coaches y nutricionistas) a convertir más llamadas cualificadas en clientes high ticket sin scripts agresivos.”
 2. **Mecanismo diferencial**: “Framework consultivo basado en diagnóstico socrático + lógica de decisión.”
 3. **Filtro explícito**: “Solo para ofertas +USD 1.000 con validación previa.”
 4. **Doble CTA**:
@@ -141,7 +141,7 @@ KPI secundarios: show-up rate y close rate.
 ## 7) Mensajes ejemplo (copys premium listos para test)
 
 ### Headline
-“Cierres high ticket para marcas de salud que ya venden, pero quieren escalar con método y sin presión.”
+“Cierres high ticket para marcas personales (entrenadores personales, psicólogos, coaches y nutricionistas) que ya venden, pero quieren escalar con método y sin presión.”
 
 ### Subheadline
 “Diagnóstico comercial consultivo para aumentar conversión de llamadas cualificadas y sostener crecimiento con reputación premium.”
