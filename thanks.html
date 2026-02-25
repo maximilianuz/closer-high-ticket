@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesión Confirmada | Maximiliano.C</title>
+    <title>Confirmación | Maximiliano.C</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.png">
 </head>
-<body>
+<body class="subpage">
+
+    <header class="navbar">
+        <a href="index.html" class="logo-link"><h2>MAXIMILIANO.C</h2></a>
+    </header>
+
     <main>
         <section class="hero fade-in">
-            <h1>Agendamiento Confirmado</h1>
-            <p class="tagline">Tu espacio ha sido reservado con éxito.</p>
-            <p style="color: var(--text-muted);">Revisa tu bandeja de entrada o spam. He enviado los detalles de nuestra reunión y el enlace de conexión.</p>
-            <br>
-            <a href="index.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">← Volver al inicio</a>
+            <div class="hero-content">
+                <i class="fa-regular fa-circle-check" style="font-size: 4rem; color: var(--accent); margin-bottom: 30px;"></i>
+                <p class="tagline">Proceso Completado</p>
+                <h1>Todo listo para nuestra sesión.</h1>
+                <p style="color:var(--text-silver); margin-bottom: 50px; max-width: 600px;">
+                    Tu solicitud ha sido recibida correctamente. He reservado este espacio exclusivamente para analizar tu oferta. Revisa tu correo electrónico para confirmar los detalles de acceso.
+                </p>
+                <a href="index.html" class="cta">Volver al Inicio</a>
+            </div>
         </section>
     </main>
 
