@@ -13,8 +13,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.png">
 </head>
@@ -65,10 +67,10 @@
             <br>
             <p style="margin-bottom: 30px;">Busco asociaciones exclusivas con coaches, entrenadores y profesionales del bienestar que ofrecen servicios transformacionales.</p>
             
-            <ul style="list-style: none; padding: 0; margin-bottom: 40px; color: var(--text-muted); text-align: left; display: inline-block;">
-                <li style="margin-bottom: 10px;">✓ Ofertas premium enfocadas en fitness/bienestar (Ticket USD 1000+)</li>
-                <li style="margin-bottom: 10px;">✓ Enfoque 100% en ventas consultivas</li>
-                <li style="margin-bottom: 10px;">✓ Visión de negocio conjunta y a largo plazo</li>
+            <ul class="premium-list">
+                <li><i class="fa-solid fa-check"></i> Ofertas premium enfocadas en fitness/bienestar (Ticket USD 1000+)</li>
+                <li><i class="fa-solid fa-check"></i> Enfoque 100% en ventas consultivas</li>
+                <li><i class="fa-solid fa-check"></i> Visión de negocio conjunta y a largo plazo</li>
             </ul>
             <br>
             <a class="cta" href="start.html">Iniciar proceso de evaluación</a>
@@ -76,9 +78,17 @@
     </main>
 
     <footer class="footer">
+        <div class="social-links">
+            <a href="mailto:contacto.maximilianoc@gmail.com" target="_blank" aria-label="Correo Electrónico"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://wa.link/1y1m1u" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
         <p>© 2026 Maximiliano.C</p>
         <p class="status">Disponible para colaboraciones estratégicas</p>
     </footer>
+
+    <a href="https://wa.link/1y1m1u" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <script src="script.js" defer></script>
 </body>
