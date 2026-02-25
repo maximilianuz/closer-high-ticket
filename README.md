@@ -1,6 +1,6 @@
 # Maximiliano.C | Closer Elite Landing Page
 
-Web profesional orientada a colaboraciones estratégicas y cierre de ventas *High Ticket* en el nicho del bienestar y alto rendimiento.
+Web profesional orientada a colaboraciones estratégicas y cierre de ventas *High Ticket* para entrenadores personales, psicólogos, coaches y nutricionistas.
 
 ## 🚀 Características
 - **Optimización SEO:** Semántica HTML5, meta-etiquetas Open Graph y Schema.org.
