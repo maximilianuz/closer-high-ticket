@@ -63,6 +63,56 @@ main {
 
 .navbar nav a:hover { color: var(--accent); letter-spacing: 4px; }
 
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav a:first-child {
+    margin-left: 0;
+}
+
+.nav-social.nav-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(209, 167, 81, 0.35);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35px;
+    font-size: 0.95rem;
+    letter-spacing: 0;
+}
+
+.nav-social.nav-icon:hover {
+    border-color: var(--accent);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inline-linkedin {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(209, 167, 81, 0.45);
+    border-radius: 50%;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.inline-linkedin:hover {
+    background: rgba(209, 167, 81, 0.15);
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -82,7 +132,7 @@ main {
 
 .hero h1 {
     font-family: var(--font-h);
-    font-size: clamp(2.4rem, 7vw, 5.3rem);
+    font-size: clamp(2.1rem, 6.4vw, 4.9rem);
     font-style: italic;
     line-height: 1.1;
     margin: 24px 0;
@@ -425,7 +475,8 @@ main {
     .navbar.is-scrolled { padding: 20px 5%; }
     .navbar nav { display: none; }
     .hero { padding-top: 120px; }
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: 2.35rem; }
+    .nav-social.nav-icon { width: 34px; height: 34px; }
     .profile { width: 156px; height: 156px; }
     .profile-hero { object-position: center 12%; }
     .authority-band { flex-direction: column; gap: 16px; padding: 36px 10px; }
