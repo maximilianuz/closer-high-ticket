@@ -1,32 +1,32 @@
-// Configuración del observador para animaciones de entrada
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.15 // Se activa cuando el 15% de la sección es visible
+    threshold: 0.15
 };
 
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries, observerRef) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Añadimos la clase 'show' para disparar el CSS
-            entry.target.classList.add("show");
-            // Una vez animado, dejamos de observar para ahorrar recursos
-            observer.unobserve(entry.target);
+            entry.target.classList.add('show');
+            observerRef.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Seleccionamos todos los elementos con la clase fade-in
-const elements = document.querySelectorAll(".fade-in");
-
-// Iniciamos la observación
+const elements = document.querySelectorAll('.fade-in');
 if (elements.length > 0) {
     elements.forEach(el => observer.observe(el));
 }
 
-// Pequeño truco para que el menú cambie de opacidad al hacer scroll
+const trackEvent = (name, payload = {}) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: name, ...payload });
+};
+
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
     if (window.scrollY > 50) {
         navbar.style.padding = '25px 8%';
         navbar.style.background = 'rgba(5, 5, 5, 0.95)';
@@ -35,3 +35,52 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(5, 5, 5, 0.8)';
     }
 });
+
+const trackedCtas = document.querySelectorAll('[data-track]');
+trackedCtas.forEach(cta => {
+    cta.addEventListener('click', () => {
+        trackEvent('cta_click', { cta_id: cta.dataset.track });
+    });
+});
+
+const applicationForm = document.getElementById('applicationForm');
+if (applicationForm) {
+    applicationForm.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const formData = Object.fromEntries(new FormData(applicationForm).entries());
+        const ticket = Number(formData.ticket || 0);
+
+        if (ticket < 1000) {
+            alert('Para esta evaluación estratégica, el ticket mínimo es USD 1.000.');
+            trackEvent('application_rejected', { reason: 'ticket_below_minimum' });
+            return;
+        }
+
+        localStorage.setItem('applicationData', JSON.stringify(formData));
+        localStorage.setItem('applicationCreatedAt', String(Date.now()));
+        trackEvent('application_submitted', { niche: formData.nicho || '' });
+        window.location.href = 'thanks.html';
+    });
+}
+
+const calendlyCta = document.getElementById('calendlyCta');
+if (calendlyCta) {
+    calendlyCta.addEventListener('click', () => {
+        localStorage.setItem('calendlyVisited', 'true');
+        trackEvent('calendly_click');
+    });
+}
+
+const applicationSummary = document.getElementById('applicationSummary');
+if (applicationSummary) {
+    const rawData = localStorage.getItem('applicationData');
+    if (rawData) {
+        const data = JSON.parse(rawData);
+        const niche = data.nicho ? `Nicho: ${data.nicho}` : '';
+        const ticket = data.ticket ? `Ticket actual: USD ${data.ticket}` : '';
+        applicationSummary.textContent = [niche, ticket].filter(Boolean).join(' • ');
+    } else {
+        applicationSummary.textContent = 'Si todavía no completaste la aplicación, volvé al paso anterior para validar encaje.';
+    }
+}

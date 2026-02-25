@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antes de nuestra conversación | Maximiliano.C</title>
-    
+    <title>Aplicación estratégica | Maximiliano.C</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.png">
@@ -21,27 +21,61 @@
 
     <main>
         <section class="hero fade-in">
-            <div class="hero-content" style="max-width: 800px;">
-                <p class="tagline">Protocolo de Evaluación</p>
-                <h1>Antes de nuestra conversación.</h1>
-                <p style="color:var(--text-silver); margin-bottom: 50px;">
-                    Esta no será una llamada de venta tradicional. Como especialista en <b>High Ticket</b> para el sector bienestar y salud, mi objetivo es utilizar la lógica y la comprensión profunda para determinar si existe un encaje estratégico real.
+            <div class="hero-content" style="max-width: 900px;">
+                <p class="tagline">Paso 1 de 2</p>
+                <h1>Aplicación de encaje estratégico.</h1>
+                <p class="intro-text">
+                    Completá este formulario breve para entender si existe encaje real. Si hay match, en el siguiente paso vas a poder acceder al calendario.
                 </p>
-                
-                <div class="purpose-box" style="text-align: left; margin-bottom: 50px;">
-                    <h3 style="font-family: var(--font-h); color: var(--accent); margin-bottom: 20px;">Lo que puedes esperar:</h3>
-                    <ul class="niche-list" style="margin: 0; display: block;">
-                        <li><i class="fa-solid fa-check"></i> <b>Cero presión:</b> Un espacio de claridad absoluta.</li>
-                        <li><i class="fa-solid fa-check"></i> <b>Análisis Crítico:</b> Evaluaremos la viabilidad de tu oferta actual.</li>
-                        <li><i class="fa-solid fa-check"></i> <b>Decisión Lógica:</b> Solo avanzaremos si ambos vemos un potencial de retorno claro.</li>
-                    </ul>
+
+
+                <div class="mini-faq">
+                    <h3>Antes de continuar</h3>
+                    <p>Este proceso está pensado para profesionales con tickets desde USD 1.000 y foco en transformación real del cliente.</p>
                 </div>
 
-                <a href="https://calendly.com/contacto-maximilianoc" target="_blank" class="cta solid">Acceder al Calendario</a>
-                
-                <p style="margin-top: 40px; font-family: var(--font-h); font-style: italic; color: var(--accent);">
-                    Nos vemos pronto.<br>Maximiliano.C
-                </p>
+                <form class="application-form" id="applicationForm">
+                    <div class="form-grid">
+                        <label>
+                            Nombre y apellido
+                            <input type="text" name="nombre" required>
+                        </label>
+                        <label>
+                            Email profesional
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            Nicho principal
+                            <input type="text" name="nicho" placeholder="Ej: nutrición, coaching, fitness" required>
+                        </label>
+                        <label>
+                            Ticket promedio actual (USD)
+                            <input type="number" name="ticket" min="1000" step="50" required>
+                        </label>
+                        <label>
+                            Leads calificados por semana
+                            <input type="number" name="leads" min="0" required>
+                        </label>
+                        <label>
+                            Mayor cuello de botella hoy
+                            <select name="cuello" required>
+                                <option value="" selected disabled>Seleccioná una opción</option>
+                                <option value="show-up">No show / asistencia a llamadas</option>
+                                <option value="cierre">Baja tasa de cierre</option>
+                                <option value="objeciones">Objeciones de precio</option>
+                                <option value="seguimiento">Seguimiento comercial</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        ¿Qué objetivo querés conseguir en los próximos 90 días?
+                        <textarea name="objetivo" rows="4" required></textarea>
+                    </label>
+
+                    <button type="submit" class="cta solid" data-track="cta_form_continue">Continuar al siguiente paso</button>
+                    <p class="cta-proof">Sin presión comercial • Solo se avanza si hay encaje real</p>
+                </form>
             </div>
         </section>
     </main>
