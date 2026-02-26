@@ -1,3 +1,5 @@
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // 1. Observador para Animaciones (Efecto "Slow Reveal")
 const observerOptions = {
     root: null,
@@ -5,18 +7,23 @@ const observerOptions = {
     threshold: 0.15
 };
 
-const observer = new IntersectionObserver((entries, observerRef) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observerRef.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
 const elements = document.querySelectorAll('.fade-in');
-if (elements.length > 0) {
-    elements.forEach(el => observer.observe(el));
+
+if (prefersReducedMotion) {
+    elements.forEach(el => el.classList.add('show'));
+} else {
+    const observer = new IntersectionObserver((entries, observerRef) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observerRef.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    if (elements.length > 0) {
+        elements.forEach(el => observer.observe(el));
+    }
 }
 
 // 2. Tracking de Eventos (DataLayer)
@@ -40,8 +47,10 @@ if (trackedElements.length > 0) {
 }
 
 // 3. Navbar Efecto Scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('.navbar');
+let ticking = false;
+
+const updateNavbarOnScroll = () => {
     if (!navbar) return;
 
     if (window.scrollY > 50) {
@@ -51,6 +60,13 @@ window.addEventListener('scroll', () => {
         navbar.style.padding = '40px 8%';
         navbar.style.background = 'rgba(5, 5, 5, 0.8)';
     }
+    ticking = false;
+};
+
+window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateNavbarOnScroll);
 });
 
 // 4. Lógica del Formulario (start.html)
