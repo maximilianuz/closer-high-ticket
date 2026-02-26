@@ -1,163 +1,207 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximiliano.C | Closer de Élite High Ticket</title>
-    <meta name="description" content="Closer especializado en ventas consultivas para entrenadores personales, psicólogos, coaches y nutricionistas.">
+:root {
+    --bg-main: #050505;
+    --bg-spotlight: radial-gradient(circle at 50% 0%, #151515 0%, #050505 50%);
+    --accent: #D1A751;
+    --accent-glow: rgba(209, 167, 81, 0.4); 
+    --accent-muted: rgba(209, 167, 81, 0.2);
+    --text-pure: #ffffff;
+    --text-silver: #a1a1a1;
+    --font-h: 'Montserrat', sans-serif; 
+    --font-b: 'Inter', sans-serif; 
+}
 
-    <meta property="og:title" content="Maximiliano.C | Closer Elite">
-    <meta property="og:description" content="Proceso consultivo de cierre high ticket para marcas de salud y bienestar.">
-    <meta property="og:image" content="assets/avatar.jpeg">
-    <meta property="og:type" content="website">
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background-color: var(--bg-main); }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+body {
+    font-family: var(--font-b);
+    background: var(--bg-main);
+    color: var(--text-pure);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/favicon.png">
-</head>
-<body>
+main { background: var(--bg-spotlight); }
 
-    <header class="navbar">
-        <nav class="nav-left">
-            <a href="#about">Trayectoria</a>
-            <a href="#metodo">Método</a>
-        </nav>
+/* NAVBAR */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 8%; position: fixed; top: 0; width: 100%; z-index: 1000;
+    backdrop-filter: blur(15px); background: rgba(5, 5, 5, 0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.logo-link { text-decoration: none; color: inherit; }
+.logo-link h2 { font-family: var(--font-h); letter-spacing: 10px; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; }
 
-        <a href="#inicio" class="logo-link" aria-label="Volver al inicio">
-            <h2>MAXIMILIANO.C</h2>
-        </a>
+.navbar nav a {
+    font-family: var(--font-h); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--text-silver); text-decoration: none; margin-left: 35px;
+    transition: 0.4s; font-weight: 500;
+}
+.navbar nav a:hover { color: var(--accent); }
 
-        <nav class="nav-right">
-            <a href="https://www.linkedin.com/in/maximilianoc-closer/" target="_blank" rel="noopener noreferrer" class="nav-social"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="#colaborar" class="nav-contact">Aplicar</a>
-        </nav>
-    </header>
+/* HERO */
+.hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    padding: 140px 5% 100px; position: relative;
+}
 
-    <main>
-        <section class="hero fade-in" id="inicio">
-            <div class="hero-content">
-                <img src="assets/avatar.jpeg" alt="Maximiliano C." class="profile" onerror="this.src='https://via.placeholder.com/150?text=Maximiliano.C'">
-                <p class="tagline">Lógica Socrática & Neurociencia</p>
-                
-                <h1 class="hero-title">
-                    INTERPRETO LA RESISTENCIA AL CAMBIO Y LA TRANSFORMO EN LA CERTEZA PARA INVERTIR EN RESULTADOS QUE ARMONIZAN VIDAS
-                </h1>
-                
-                <p class="niche-context">Socio estratégico para Entrenadores Personales, Psicólogos, Coaches y Nutricionistas que buscan escalar ofertas premium.</p>
-                
-                <div class="hero-cta-group">
-                    <a href="start.html" class="cta" data-track="cta_hero_apply">Aplicar a Evaluación Estratégica</a>
-                </div>
-                
-                <p class="cta-proof">Diagnóstico real • Sin scripts agresivos • Solo si hay encaje</p>
-                
-                <a href="https://www.linkedin.com/in/maximilianoc-closer/" target="_blank" rel="noopener noreferrer" class="linkedin-badge">
-                    <i class="fab fa-linkedin"></i> Perfil profesional verificado
-                </a>
-            </div>
+/* FOTO CENTRADA (Agrandada y ajustada para no cortar el cabello) */
+.profile {
+    display: block; margin: 0 auto;
+    width: 200px; height: 200px; border-radius: 50%; 
+    object-fit: cover; object-position: top center; /* Enfoca hacia arriba */
+    border: 1px solid var(--accent-muted); padding: 8px;
+    background: radial-gradient(circle, rgba(209, 167, 81, 0.15) 0%, transparent 70%);
+}
 
-            <div class="shape-divider">
-                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-                </svg>
-            </div>
-        </section>
+.tagline { display: block; font-family: var(--font-h); font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); margin-top: 25px; margin-bottom: 15px; font-weight: 600;}
 
-        <div class="authority-band fade-in">
-            <span>+ DE 15 AÑOS DE EXPERIENCIA INTERACTUANDO CON PERSONAS</span>
-            <span class="dot">•</span>
-            <span>NICHO FIT-TECH & SALUD</span>
-            <span class="dot">•</span>
-            <span>LÓGICA SOCRÁTICA</span>
-        </div>
+.hero-title {
+    font-family: var(--font-h); font-weight: 300; line-height: 1.35;
+    margin: 20px auto; max-width: 1000px; font-size: clamp(1.4rem, 4vw, 2.8rem);
+    letter-spacing: 1px;
+}
 
-        <section class="section proof-grid fade-in" id="resultados">
-            <article class="proof-card">
-                <h3>Claridad comercial</h3>
-                <p>Estructura de conversación para detectar objeciones reales y elevar la calidad de cada llamada.</p>
-            </article>
-            <article class="proof-card">
-                <h3>Calificación inteligente</h3>
-                <p>Filtro previo para priorizar prospectos con capacidad, urgencia y encaje real con tu oferta.</p>
-            </article>
-            <article class="proof-card">
-                <h3>Decisión sin fricción</h3>
-                <p>Proceso consultivo que ordena la información y facilita una decisión lógica, ética y sostenible.</p>
-            </article>
-        </section>
+.niche-context { color: var(--text-silver); font-size: 1.05rem; font-weight: 300; max-width: 700px; margin: 0 auto; line-height: 1.6;}
 
-        <section class="centered-section section fade-in" id="about">
-            <div class="centered-content">
-                <span class="tagline">Trayectoria</span>
-                <h2 class="section-title">15 años de errores, aciertos y evolución</h2>
-                <p>15 años de búsqueda y de prueba y error en la trinchera comercial me han enseñado qué funciona y qué destruye la confianza. Hoy, esa trayectoria me permite seguir aportando valor desde el lugar donde me siento más cómodo y genuino.</p>
-                <p>Mi objetivo actual es sencillo: hacer exactamente lo que hacen ustedes... cambiar conductas y ayudar a las personas a tomar decisiones que transformen su realidad.</p>
-            </div>
-        </section>
+.hero-cta-group { margin-top: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.cta-proof { margin-top: 20px; color: var(--text-silver); font-size: 0.85rem; letter-spacing: 1px; text-align: center; display: block; }
 
-        <section class="centered-section section fade-in" id="metodo">
-            <div class="centered-content">
-                <span class="tagline">El Sistema</span>
-                <h2 class="section-title">Del caos comercial al sistema de cierre premium</h2>
-                
-                <img src="assets/dardo.jpg" alt="Precisión en ventas" class="feature-image" onerror="this.style.display='none'">
-                
-                <p>Un proceso lineal y predecible diseñado para escalar la autoridad de tu marca en cada punto de contacto.</p>
-                
-                <div class="method-steps">
-                    <p><b>1. Diagnóstico:</b> Aislamiento analítico de cuellos de botella.</p>
-                    <p><b>2. Arquitectura:</b> Diseño de guion consultivo y criterios de calificación.</p>
-                    <p><b>3. Implementación:</b> Ordenamiento del proceso de llamada sin fricción.</p>
-                    <p><b>4. Optimización:</b> Revisión basada en datos para sostener resultados.</p>
-                </div>
-            </div>
-        </section>
+.linkedin-badge {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    margin: 35px auto 0; padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; font-family: var(--font-h); font-size: 0.75rem; color: var(--text-silver);
+    text-decoration: none; transition: 0.4s; letter-spacing: 1px; font-weight: 500; text-transform: uppercase;
+}
+.linkedin-badge:hover { background: rgba(209, 167, 81, 0.1); border-color: var(--accent-muted); color: var(--accent); }
 
-        <section class="section faq-section fade-in" id="faq">
-            <h2 class="section-title">Preguntas frecuentes</h2>
-            <div class="faq-accordion">
-                <details class="faq-details" name="faq">
-                    <summary class="faq-summary">¿Esta evaluación es una llamada de venta? <i class="fa-solid fa-plus icon"></i></summary>
-                    <div class="faq-content">No. Es una conversación estratégica fundamentada en la honestidad brutal para revisar tu contexto y validar si existe un encaje lógico y ético para trabajar juntos.</div>
-                </details>
-                <details class="faq-details" name="faq">
-                    <summary class="faq-summary">¿Con quién suelo trabajar? <i class="fa-solid fa-plus icon"></i></summary>
-                    <div class="faq-content">Exclusivamente con Entrenadores Personales, Psicólogos, Coaches y Nutricionistas que ya poseen una oferta validada y entregan una transformación real a sus clientes.</div>
-                </details>
-                <details class="faq-details" name="faq">
-                    <summary class="faq-summary">¿Cuál es el criterio mínimo para aplicar? <i class="fa-solid fa-plus icon"></i></summary>
-                    <div class="faq-content">El negocio debe estar operando con tickets superiores a USD 1.000 y el profesional debe estar dispuesto a abandonar tácticas de presión por un proceso consultivo.</div>
-                </details>
-            </div>
-        </section>
+.shape-divider { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; transform: rotate(180deg); }
+.shape-divider svg { width: calc(100% + 1.3px); height: 80px; }
+.shape-divider .shape-fill { fill: #080808; }
 
-        <section class="section fade-in" id="colaborar">
-            <div class="purpose-box">
-                <h2 class="section-title">Sinergia Selectiva</h2>
-                <p>Trabajo únicamente con marcas y profesionales que priorizan transformación real y operan con tickets desde USD 1.000.</p>
-                <ul class="niche-list">
-                    <li><i class="fa-solid fa-check"></i> <b>Coaches & Mentores</b></li>
-                    <li><i class="fa-solid fa-check"></i> <b>Entrenadores Personales</b></li>
-                    <li><i class="fa-solid fa-check"></i> <b>Psicólogos & Nutricionistas</b></li>
-                </ul>
-                <a href="start.html" class="cta solid" data-track="cta_bottom_apply">Aplicar y validar encaje</a>
-                <p class="qualification-note">Cupos limitados por mes para mantener la calidad de implementación.</p>
-            </div>
-        </section>
-    </main>
+/* BANDA DE AUTORIDAD */
+.authority-band {
+    background: #080808; padding: 50px 20px; display: flex; justify-content: center;
+    align-items: center; gap: 30px; font-family: var(--font-h); font-size: 0.75rem; letter-spacing: 2px;
+    color: var(--text-silver); border-bottom: 1px solid rgba(255,255,255,0.03); text-align: center;
+    font-weight: 500;
+}
+.dot { color: var(--accent); font-size: 1rem; }
 
-    <footer class="footer">
-        <div class="social-links">
-            <a href="mailto:contacto.maximilianoc@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/maximilianoc-closer/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-        <p class="copyright">© 2026 MAXIMILIANO.C | EXCLUSIVE PARTNERSHIPS ONLY</p>
-    </footer>
+/* SECCIONES CENTRADAS */
+.section { padding: 140px 8%; max-width: 1200px; margin: 0 auto; text-align: center; }
+.section-title { font-family: var(--font-h); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 40px; font-weight: 400; line-height: 1.2;}
 
-    <script src="script.js" defer></script>
-</body>
-</html>
+.centered-section { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.centered-content { max-width: 800px; margin: 0 auto; text-align: center; }
+.centered-content p { font-size: 1.1rem; color: var(--text-silver); margin-bottom: 25px; font-weight: 300; line-height: 1.8; }
+
+/* TARJETAS CON EFECTO DE DESTELLO */
+.proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.proof-card {
+    background: #0a0a0a; border: 1px solid rgba(209, 167, 81, 0.15);
+    padding: 40px 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 4px; text-align: center;
+}
+.proof-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: translateY(-8px);
+    background: #0c0c0c;
+}
+.proof-card h3 { font-family: var(--font-h); color: var(--accent); margin-bottom: 15px; font-size: 1.3rem; font-weight: 600; }
+.proof-card p { color: var(--text-silver); font-size: 0.95rem; line-height: 1.7; }
+
+/* IMÁGENES EXTRA (Dardo y Retrato Trayectoria) */
+.feature-image { display: block; width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); margin: 40px auto; filter: grayscale(100%); transition: 0.5s; }
+.feature-image:hover { filter: grayscale(0%); }
+
+.feature-image-portrait { display: block; width: 100%; max-width: 320px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); margin: 30px auto 40px; filter: grayscale(100%); transition: 0.5s; }
+.feature-image-portrait:hover { filter: grayscale(0%); }
+
+
+.method-steps { 
+    max-width: 550px; margin: 0 auto; 
+    text-align: left; 
+    background: #080808; padding: 40px; border: 1px solid rgba(209,167,81,0.1); border-radius: 4px;
+}
+.method-steps p { font-size: 1.05rem; margin-bottom: 15px; color: var(--text-silver); }
+.method-steps b { color: var(--text-pure); font-weight: 500; }
+
+/* FAQ ACORDEÓN PREMIUM */
+.faq-accordion { max-width: 800px; margin: 0 auto; text-align: left; }
+.faq-details { 
+    background: #080808; border: 1px solid rgba(209, 167, 81, 0.15); 
+    margin-bottom: 20px; border-radius: 4px; transition: 0.3s;
+}
+.faq-details:hover { border-color: var(--accent-muted); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.faq-summary {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 25px 30px; font-family: var(--font-h); font-size: 1.05rem; 
+    color: var(--text-pure); cursor: pointer; list-style: none; font-weight: 500;
+}
+.faq-summary::-webkit-details-marker { display: none; }
+.faq-summary .icon { color: var(--accent); transition: transform 0.4s ease; font-size: 1.2rem; }
+.faq-details[open] .faq-summary .icon { transform: rotate(45deg); color: #fff;}
+.faq-content { padding: 0 30px 25px 30px; color: var(--text-silver); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
+
+/* COLABORAR Y FORMULARIOS */
+.purpose-box { background: #0a0a0a; padding: 80px 50px; border: 1px solid rgba(209, 167, 81, 0.2); max-width: 900px; margin: 0 auto; border-radius: 4px;}
+.niche-list { list-style: none; display: flex; justify-content: center; gap: 30px; margin: 40px 0; flex-wrap: wrap; }
+.niche-list li { color: var(--text-silver); font-size: 0.95rem; letter-spacing: 1px; }
+.niche-list b { color: var(--text-pure); font-weight: 500;}
+.qualification-note { display: block; margin-top: 25px; color: var(--text-silver); font-size: 0.85rem; }
+
+.application-form { max-width: 800px; margin: 40px auto 0; text-align: left; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.application-form label { display: flex; flex-direction: column; font-size: 0.9rem; letter-spacing: 0.5px; color: var(--text-silver); gap: 10px; }
+.application-form input, .application-form select, .application-form textarea {
+    border: 1px solid rgba(209, 167, 81, 0.25); background: #080808; color: var(--text-pure);
+    padding: 15px; font-family: var(--font-b); font-size: 1rem; transition: 0.3s; border-radius: 4px;
+}
+.application-form input:focus, .application-form select:focus, .application-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 10px rgba(209,167,81,0.2); }
+.application-form button { margin-top: 22px; }
+.form-error-msg { color: #d9534f; font-size: 0.95rem; margin-top: 20px; display: none; border-left: 3px solid #d9534f; padding: 15px; background: rgba(217, 83, 79, 0.05);}
+
+/* BOTONES */
+.cta {
+    display: inline-block; padding: 20px 40px; border: 1px solid var(--accent); color: var(--accent);
+    text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;
+    transition: all 0.4s ease; background: transparent; cursor: pointer; font-family: var(--font-h); font-weight: 600;
+}
+.cta:hover { background: var(--accent); color: #000; box-shadow: 0 10px 25px var(--accent-glow); transform: translateY(-3px); }
+.cta.solid { background: var(--accent); color: #000; }
+.cta-secondary { border-color: rgba(209, 167, 81, 0.45); }
+
+/* FOOTER */
+.footer { padding: 100px 20px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+.social-links { margin-bottom: 30px; }
+.social-links a { color: var(--text-silver); font-size: 1.8rem; margin: 0 20px; transition: 0.4s; }
+.social-links a:hover { color: var(--accent); }
+.copyright { font-family: var(--font-h); font-size: 0.7rem; letter-spacing: 3px; color: #444; text-transform: uppercase; font-weight: 600;}
+
+/* UTILIDADES Y ANIMACIONES */
+.thanks-content { max-width: 860px; margin: 0 auto; }
+.checklist-box { margin: 30px auto; text-align: left; padding: 32px; }
+.checklist-box h3 { font-family: var(--font-h); color: var(--accent); margin-bottom: 16px; }
+.checklist-list { justify-content: flex-start; margin: 0; }
+.checklist-list li { width: 100%; }
+
+.fade-in { opacity: 0; transform: translateY(50px); transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
+.fade-in.show { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .navbar { padding: 20px 5%; justify-content: center; }
+    .navbar nav { display: none; }
+    .hero { padding-top: 120px; }
+    .hero-title { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
+    .authority-band { flex-direction: column; gap: 15px; padding: 40px 10px; }
+    .dot { display: none; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .section { padding: 100px 6%; }
+    .form-grid { grid-template-columns: 1fr; }
+}
