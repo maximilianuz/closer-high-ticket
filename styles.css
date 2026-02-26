@@ -69,8 +69,7 @@ main { background: var(--bg-spotlight); }
     letter-spacing: -0.5px; 
 }
 
-.niche-context { color: var(--text-silver); font-size: 1.05rem; font-weight: 300; max-width: 700px; margin: 0 auto; line-height: 1.6;}
-
+.niche-context { color: var(--text-silver); font-size: 1.05rem; font-weight: 400; max-width: 700px; margin: 0 auto; line-height: 1.7;}
 .hero-cta-group { margin-top: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .cta-proof { margin-top: 20px; color: var(--text-silver); font-size: 0.85rem; letter-spacing: 1px; text-align: center; display: block; }
 
