@@ -25,6 +25,20 @@ const trackEvent = (name, payload = {}) => {
     window.dataLayer.push({ event: name, ...payload });
 };
 
+// 2.1 Tracking automático para elementos con data-track
+const trackedElements = document.querySelectorAll('[data-track]');
+if (trackedElements.length > 0) {
+    trackedElements.forEach(element => {
+        element.addEventListener('click', () => {
+            trackEvent('cta_click', {
+                cta_id: element.dataset.track,
+                cta_text: (element.textContent || '').trim(),
+                page: window.location.pathname
+            });
+        });
+    });
+}
+
 // 3. Navbar Efecto Scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -49,10 +63,10 @@ if (applicationForm) {
         const ticket = Number(formData.ticket || 0);
         const errorMsgBox = document.getElementById('formError');
 
-        if(errorMsgBox) errorMsgBox.style.display = 'none';
+        if (errorMsgBox) errorMsgBox.style.display = 'none';
 
         if (ticket < 1000) {
-            if(errorMsgBox) {
+            if (errorMsgBox) {
                 errorMsgBox.innerHTML = '<i class="fa-solid fa-circle-exclamation" style="margin-right:8px; color: #d9534f;"></i> <b>Encaje no viable:</b> Para asegurar el rigor y retorno de inversión en este nivel de colaboración, actualmente mi estructura solo permite integrarse con ofertas a partir de USD 1.000.';
                 errorMsgBox.style.display = 'block';
             }
