@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación Estratégica | Maximiliano.C</title>
-    
+    <meta name="description" content="Completa la aplicación estratégica para validar encaje y acceder al siguiente paso de evaluación con Maximiliano.C.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://maximilianoc.netlify.app/start.html">
+
+    <meta property="og:title" content="Aplicación Estratégica | Maximiliano.C">
+    <meta property="og:description" content="Diagnóstico breve para validar si existe encaje real antes de agendar.">
+    <meta property="og:image" content="assets/avatar.jpeg">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.png">
 </head>
@@ -36,10 +44,10 @@
 
                 <form class="application-form" id="applicationForm">
                     <div class="form-grid">
-                        <label>Nombre y apellido <input type="text" name="nombre" required></label>
-                        <label>Email profesional <input type="email" name="email" required></label>
+                        <label>Nombre y apellido <input type="text" name="nombre" autocomplete="name" required></label>
+                        <label>Email profesional <input type="email" name="email" autocomplete="email" required></label>
                         <label>Nicho principal <input type="text" name="nicho" placeholder="Ej: Nutrición, Psicología, Fitness..." required></label>
-                        <label>Ticket promedio actual (USD) <input type="number" name="ticket" required></label>
+                        <label>Ticket promedio actual (USD) <input type="number" name="ticket" min="0" required></label>
                         <label>Leads calificados por semana <input type="number" name="leads" min="0" required></label>
                         <label>Mayor cuello de botella hoy
                             <select name="cuello" required>
@@ -56,7 +64,7 @@
                         <textarea name="objetivo" rows="4" required></textarea>
                     </label>
 
-                    <div id="formError" class="form-error-msg"></div>
+                    <div id="formError" class="form-error-msg" role="alert" aria-live="polite"></div>
 
                     <button type="submit" class="cta solid" style="margin-top: 35px; width: 100%;" data-track="cta_form_continue">Evaluar Encaje y Continuar</button>
                     <p class="cta-proof" style="margin-top: 20px; text-align: center;">Sin presión comercial • Privacidad absoluta</p>
