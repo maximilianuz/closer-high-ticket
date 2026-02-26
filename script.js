@@ -49,10 +49,8 @@ if (applicationForm) {
         const ticket = Number(formData.ticket || 0);
         const errorMsgBox = document.getElementById('formError');
 
-        // Limpiar errores previos
         if(errorMsgBox) errorMsgBox.style.display = 'none';
 
-        // FILTRO HIGH TICKET (Sustituye al viejo alert)
         if (ticket < 1000) {
             if(errorMsgBox) {
                 errorMsgBox.innerHTML = '<i class="fa-solid fa-circle-exclamation" style="margin-right:8px; color: #d9534f;"></i> <b>Encaje no viable:</b> Para asegurar el rigor y retorno de inversión en este nivel de colaboración, actualmente mi estructura solo permite integrarse con ofertas a partir de USD 1.000.';
@@ -62,7 +60,6 @@ if (applicationForm) {
             return;
         }
 
-        // Si pasa el filtro, guardamos datos y avanzamos
         localStorage.setItem('applicationData', JSON.stringify(formData));
         localStorage.setItem('applicationCreatedAt', String(Date.now()));
         trackEvent('application_submitted', { niche: formData.nicho || '' });
