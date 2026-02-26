@@ -2,12 +2,12 @@
     --bg-main: #050505;
     --bg-spotlight: radial-gradient(circle at 50% 0%, #151515 0%, #050505 50%);
     --accent: #D1A751;
-    --accent-glow: rgba(209, 167, 81, 0.4); /* Destello más refinado */
+    --accent-glow: rgba(209, 167, 81, 0.4); 
     --accent-muted: rgba(209, 167, 81, 0.2);
     --text-pure: #ffffff;
     --text-silver: #a1a1a1;
-    --font-h: 'Montserrat', sans-serif; /* Tipografía para Títulos */
-    --font-b: 'Inter', sans-serif; /* Tipografía para Párrafos */
+    --font-h: 'Montserrat', sans-serif; 
+    --font-b: 'Inter', sans-serif; 
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,11 +47,11 @@ main { background: var(--bg-spotlight); }
     padding: 140px 5% 100px; position: relative;
 }
 
-/* FOTO CENTRADA */
+/* FOTO CENTRADA (Agrandada y ajustada para no cortar el cabello) */
 .profile {
     display: block; margin: 0 auto;
-    width: 150px; height: 150px; border-radius: 50%; 
-    object-fit: cover; object-position: center;
+    width: 200px; height: 200px; border-radius: 50%; 
+    object-fit: cover; object-position: top center; /* Enfoca hacia arriba */
     border: 1px solid var(--accent-muted); padding: 8px;
     background: radial-gradient(circle, rgba(209, 167, 81, 0.15) 0%, transparent 70%);
 }
@@ -115,13 +115,17 @@ main { background: var(--bg-spotlight); }
 .proof-card h3 { font-family: var(--font-h); color: var(--accent); margin-bottom: 15px; font-size: 1.3rem; font-weight: 600; }
 .proof-card p { color: var(--text-silver); font-size: 0.95rem; line-height: 1.7; }
 
-/* FOTO DARDO Y PASOS DEL METODO */
+/* IMÁGENES EXTRA (Dardo y Retrato Trayectoria) */
 .feature-image { display: block; width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); margin: 40px auto; filter: grayscale(100%); transition: 0.5s; }
 .feature-image:hover { filter: grayscale(0%); }
 
+.feature-image-portrait { display: block; width: 100%; max-width: 320px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); margin: 30px auto 40px; filter: grayscale(100%); transition: 0.5s; }
+.feature-image-portrait:hover { filter: grayscale(0%); }
+
+
 .method-steps { 
-    max-width: 550px; margin: 0 auto; /* Centra el bloque en pantalla */
-    text-align: left; /* Alinea el texto internamente para fácil lectura */
+    max-width: 550px; margin: 0 auto; 
+    text-align: left; 
     background: #080808; padding: 40px; border: 1px solid rgba(209,167,81,0.1); border-radius: 4px;
 }
 .method-steps p { font-size: 1.05rem; margin-bottom: 15px; color: var(--text-silver); }
