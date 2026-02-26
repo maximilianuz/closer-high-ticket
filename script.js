@@ -1,3 +1,4 @@
+// 1. Observador para Animaciones (Efecto "Slow Reveal")
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -18,11 +19,13 @@ if (elements.length > 0) {
     elements.forEach(el => observer.observe(el));
 }
 
+// 2. Tracking de Eventos (DataLayer)
 const trackEvent = (name, payload = {}) => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: name, ...payload });
 };
 
+// 3. Navbar Efecto Scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
@@ -36,13 +39,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-const trackedCtas = document.querySelectorAll('[data-track]');
-trackedCtas.forEach(cta => {
-    cta.addEventListener('click', () => {
-        trackEvent('cta_click', { cta_id: cta.dataset.track });
-    });
-});
-
+// 4. Lógica del Formulario (start.html)
 const applicationForm = document.getElementById('applicationForm');
 if (applicationForm) {
     applicationForm.addEventListener('submit', event => {
@@ -50,13 +47,22 @@ if (applicationForm) {
 
         const formData = Object.fromEntries(new FormData(applicationForm).entries());
         const ticket = Number(formData.ticket || 0);
+        const errorMsgBox = document.getElementById('formError');
 
+        // Limpiar errores previos
+        if(errorMsgBox) errorMsgBox.style.display = 'none';
+
+        // FILTRO HIGH TICKET (Sustituye al viejo alert)
         if (ticket < 1000) {
-            alert('Para esta evaluación estratégica, el ticket mínimo es USD 1.000.');
+            if(errorMsgBox) {
+                errorMsgBox.innerHTML = '<i class="fa-solid fa-circle-exclamation" style="margin-right:8px; color: #d9534f;"></i> <b>Encaje no viable:</b> Para asegurar el rigor y retorno de inversión en este nivel de colaboración, actualmente mi estructura solo permite integrarse con ofertas a partir de USD 1.000.';
+                errorMsgBox.style.display = 'block';
+            }
             trackEvent('application_rejected', { reason: 'ticket_below_minimum' });
             return;
         }
 
+        // Si pasa el filtro, guardamos datos y avanzamos
         localStorage.setItem('applicationData', JSON.stringify(formData));
         localStorage.setItem('applicationCreatedAt', String(Date.now()));
         trackEvent('application_submitted', { niche: formData.nicho || '' });
@@ -64,6 +70,7 @@ if (applicationForm) {
     });
 }
 
+// 5. Lógica de la página de Confirmación (thanks.html)
 const calendlyCta = document.getElementById('calendlyCta');
 if (calendlyCta) {
     calendlyCta.addEventListener('click', () => {
@@ -78,9 +85,9 @@ if (applicationSummary) {
     if (rawData) {
         const data = JSON.parse(rawData);
         const niche = data.nicho ? `Nicho: ${data.nicho}` : '';
-        const ticket = data.ticket ? `Ticket actual: USD ${data.ticket}` : '';
+        const ticket = data.ticket ? `Ticket: USD ${data.ticket}` : '';
         applicationSummary.textContent = [niche, ticket].filter(Boolean).join(' • ');
     } else {
-        applicationSummary.textContent = 'Si todavía no completaste la aplicación, volvé al paso anterior para validar encaje.';
+        applicationSummary.textContent = 'Si no completaste la aplicación, vuelve al inicio para validar encaje.';
     }
 }
