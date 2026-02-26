@@ -23,6 +23,35 @@ body {
 
 main { background: var(--bg-spotlight); }
 
+.skip-link {
+    position: absolute;
+    top: -44px;
+    left: 16px;
+    z-index: 2000;
+    background: var(--accent);
+    color: #000;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: var(--font-h);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 14px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
 /* NAVBAR */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
@@ -70,6 +99,7 @@ main { background: var(--bg-spotlight); }
 }
 
 .niche-context { color: var(--text-silver); font-size: 1.05rem; font-weight: 400; max-width: 700px; margin: 0 auto; line-height: 1.7;}
+
 .hero-cta-group { margin-top: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .cta-proof { margin-top: 20px; color: var(--text-silver); font-size: 0.85rem; letter-spacing: 1px; text-align: center; display: block; }
 
@@ -99,6 +129,7 @@ main { background: var(--bg-spotlight); }
 /* SECCIONES CENTRADAS */
 .section { padding: 140px 8%; max-width: 1200px; margin: 0 auto; text-align: center; }
 .section-title { font-family: var(--font-h); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 40px; font-weight: 500; line-height: 1.2;}
+
 .centered-section { display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .centered-content { max-width: 800px; margin: 0 auto; text-align: center; }
 .centered-content p { font-size: 1.1rem; color: var(--text-silver); margin-bottom: 25px; font-weight: 400; line-height: 1.85; }
@@ -109,6 +140,7 @@ main { background: var(--bg-spotlight); }
     text-transform: uppercase;
     letter-spacing: 0.6px;
 }
+
 /* TARJETAS CON EFECTO DE DESTELLO */
 .proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
 .proof-card {
