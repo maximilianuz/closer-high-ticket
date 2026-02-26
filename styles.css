@@ -47,21 +47,26 @@ main { background: var(--bg-spotlight); }
     padding: 140px 5% 100px; position: relative;
 }
 
-/* FOTO CENTRADA (Agrandada y ajustada para no cortar el cabello) */
+/* FOTO CENTRADA */
 .profile {
     display: block; margin: 0 auto;
     width: 200px; height: 200px; border-radius: 50%; 
-    object-fit: cover; object-position: top center; /* Enfoca hacia arriba */
+    object-fit: cover; object-position: top center;
     border: 1px solid var(--accent-muted); padding: 8px;
     background: radial-gradient(circle, rgba(209, 167, 81, 0.15) 0%, transparent 70%);
 }
 
 .tagline { display: block; font-family: var(--font-h); font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); margin-top: 25px; margin-bottom: 15px; font-weight: 600;}
 
+/* NUEVO HERO TITLE AJUSTADO PARA MINÚSCULAS */
 .hero-title {
-    font-family: var(--font-h); font-weight: 300; line-height: 1.35;
-    margin: 20px auto; max-width: 1000px; font-size: clamp(1.4rem, 4vw, 2.8rem);
-    letter-spacing: 1px;
+    font-family: var(--font-h); 
+    font-weight: 400; 
+    line-height: 1.25;
+    margin: 20px auto; 
+    max-width: 900px; 
+    font-size: clamp(2rem, 5vw, 3.8rem); 
+    letter-spacing: -0.5px; 
 }
 
 .niche-context { color: var(--text-silver); font-size: 1.05rem; font-weight: 300; max-width: 700px; margin: 0 auto; line-height: 1.6;}
@@ -69,10 +74,11 @@ main { background: var(--bg-spotlight); }
 .hero-cta-group { margin-top: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .cta-proof { margin-top: 20px; color: var(--text-silver); font-size: 0.85rem; letter-spacing: 1px; text-align: center; display: block; }
 
+/* BADGE DE LINKEDIN SUTIL Y ELEGANTE */
 .linkedin-badge {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     margin: 35px auto 0; padding: 12px 25px;
-    background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 50px; font-family: var(--font-h); font-size: 0.75rem; color: var(--text-silver);
     text-decoration: none; transition: 0.4s; letter-spacing: 1px; font-weight: 500; text-transform: uppercase;
 }
@@ -115,7 +121,7 @@ main { background: var(--bg-spotlight); }
 .proof-card h3 { font-family: var(--font-h); color: var(--accent); margin-bottom: 15px; font-size: 1.3rem; font-weight: 600; }
 .proof-card p { color: var(--text-silver); font-size: 0.95rem; line-height: 1.7; }
 
-/* IMÁGENES EXTRA (Dardo y Retrato Trayectoria) */
+/* IMÁGENES EXTRA */
 .feature-image { display: block; width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); margin: 40px auto; filter: grayscale(100%); transition: 0.5s; }
 .feature-image:hover { filter: grayscale(0%); }
 
@@ -198,7 +204,7 @@ main { background: var(--bg-spotlight); }
     .navbar { padding: 20px 5%; justify-content: center; }
     .navbar nav { display: none; }
     .hero { padding-top: 120px; }
-    .hero-title { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
+    .hero-title { font-size: clamp(1.8rem, 6vw, 2.5rem) !important; }
     .authority-band { flex-direction: column; gap: 15px; padding: 40px 10px; }
     .dot { display: none; }
     .proof-grid { grid-template-columns: 1fr; }
