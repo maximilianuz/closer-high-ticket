@@ -173,6 +173,59 @@ summary:focus-visible {
 .method-steps p { font-size: 1.05rem; margin-bottom: 15px; color: var(--text-silver); }
 .method-steps b { color: var(--text-pure); font-weight: 500; }
 
+
+.method-steps-list {
+    display: grid;
+    gap: 14px;
+}
+
+.method-step-item {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 14px 12px;
+    border: 1px solid rgba(209, 167, 81, 0.12);
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+    transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.method-step-item:hover {
+    border-color: rgba(209, 167, 81, 0.35);
+    background: rgba(209, 167, 81, 0.04);
+    transform: translateY(-2px);
+}
+
+.method-step-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    border: 1px solid rgba(209, 167, 81, 0.35);
+    background: rgba(209, 167, 81, 0.08);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.method-step-text h3 {
+    margin: 0 0 6px;
+    font-family: var(--font-h);
+    font-size: 1.02rem;
+    color: var(--text-pure);
+    font-weight: 600;
+}
+
+.method-step-text p {
+    margin: 0;
+    color: var(--text-silver);
+    font-size: 0.97rem;
+    line-height: 1.65;
+}
+
 /* FAQ ACORDEÓN PREMIUM */
 .faq-accordion { max-width: 800px; margin: 0 auto; text-align: left; }
 .faq-details { 
