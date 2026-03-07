@@ -50,12 +50,10 @@ main { background: var(--bg-spotlight); }
 .proof-card { background: #0f0f0f; border: 1px solid rgba(255,255,255,0.03); padding: 40px; border-radius: 6px; transition: all 0.3s ease; text-align: left; }
 .proof-card:hover { border-color: rgba(203, 161, 83, 0.4); box-shadow: 0 10px 30px var(--accent-glow); transform: translateY(-5px); }
 
-/* --- NUEVO: ÍCONOS ALINEADOS (FLEXBOX) --- */
+/* ÍCONOS ALINEADOS */
 .card-title-group { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
 .card-title-group .icon-gold { color: var(--accent); font-size: 1.4rem; margin-bottom: 0; }
 .card-title-group h3 { font-family: var(--font-h); font-size: 1.15rem; font-weight: 600; color: #fff; margin-bottom: 0; }
-/* ----------------------------------------- */
-
 .proof-card p { color: var(--text-silver); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0; }
 
 /* FAQ */
@@ -77,7 +75,6 @@ main { background: var(--bg-spotlight); }
 .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .application-form label { display: flex; flex-direction: column; color: var(--text-silver); font-size: 0.85rem; margin-bottom: 15px; gap: 8px; }
 .application-form input, .application-form textarea { background: #0c0c0c; border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 15px; border-radius: 4px; font-family: var(--font-b); font-size: 0.95rem; width: 100%; transition: 0.3s; }
-.application-form input:focus, .application-form textarea:focus { border-color: var(--accent); outline: none; }
 .form-error-msg { margin-top: 20px; display: none; border: 1px solid #d9534f; padding: 15px; background: rgba(217, 83, 79, 0.05); color: #fff; font-size: 0.9rem; border-radius: 4px; }
 
 /* FOOTER */
@@ -98,4 +95,27 @@ main { background: var(--bg-spotlight); }
     .hero-title { font-size: 1.8rem; }
     .authority-band { flex-direction: column; gap: 15px; }
     .dot { display: none; }
+}
+
+/* =========================================
+   ⚡ UX PREMIUM MULTIPLATAFORMA (APPLE/ANDROID/PC)
+   ========================================= */
+
+::selection { background-color: var(--accent); color: #000; }
+::-moz-selection { background-color: var(--accent); color: #000; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+* { scrollbar-width: thin; scrollbar-color: #222 var(--bg-main); }
+
+input:focus, textarea:focus { outline: none !important; border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(203, 161, 83, 0.15) !important; }
+
+input, textarea { -webkit-appearance: none; appearance: none; }
+.faq-summary { min-height: 48px; align-items: center; -webkit-tap-highlight-color: transparent; }
+.cta, .nav-links a { -webkit-tap-highlight-color: transparent; }
+
+@media screen and (max-width: 768px) {
+    input, textarea { font-size: 16px !important; }
 }
