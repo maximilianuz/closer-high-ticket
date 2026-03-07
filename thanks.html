@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Agenda</title>
-
-<link rel="stylesheet" href="css/styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siguiente paso | Maximiliano.C</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body style="background: var(--bg-spotlight); display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+    <main class="section fade-in show" style="max-width: 800px; padding: 20px;">
+        <i class="fa-regular fa-circle-check" style="font-size: 4rem; color: var(--accent); margin-bottom: 25px;"></i>
+        <p class="tagline">Paso 2 de 2: Agendamiento</p>
+        <h1 class="section-title">GRACIAS POR TU CONFIANZA</h1>
+        
+        <div style="background: rgba(209, 167, 81, 0.1); border-left: 3px solid var(--accent); padding: 25px; text-align: left; margin: 30px auto; max-width: 650px;">
+            <p style="color:#fff; margin-bottom:10px;">
+                <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent); margin-right: 10px;"></i>
+                <b>ATENCIÓN: Tu sesión aún no está reservada.</b>
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-silver);">Para finalizar el proceso y asegurar tu espacio, debés seleccionar fecha y hora en el calendario a continuación.</p>
+        </div>
 
-<body>
+        <p id="applicationSummary" style="color: var(--accent); margin-bottom: 30px; font-style: italic; font-family: var(--font-h);"></p>
 
-<div class="container">
-
-<h2>Agenda una conversación</h2>
-
-<p>
-
-Si sentís que tu proceso comercial puede mejorar,
-podemos revisarlo juntos.
-
-</p>
-
-<div class="calendly-inline-widget"
-data-url="https://calendly.com/tu-link"
-style="min-width:320px;height:700px;">
-</div>
-
-<script src="https://assets.calendly.com/assets/external/widget.js"></script>
-
-</div>
-
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://calendly.com/contacto-maximilianoc/30min" class="cta solid" target="_blank" rel="noopener">Completar Reserva en Calendly</a>
+            <a href="index.html" class="cta cta-secondary">Volver al inicio</a>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
