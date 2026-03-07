@@ -49,14 +49,20 @@ main { background: var(--bg-spotlight); }
 .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
 .proof-card { background: #0f0f0f; border: 1px solid rgba(255,255,255,0.03); padding: 40px; border-radius: 6px; transition: all 0.3s ease; text-align: left; }
 .proof-card:hover { border-color: rgba(203, 161, 83, 0.4); box-shadow: 0 10px 30px var(--accent-glow); transform: translateY(-5px); }
-.proof-card h3 { font-family: var(--font-h); margin-bottom: 15px; font-size: 1.2rem; font-weight: 500; color: #fff; }
-.icon-gold { color: var(--accent); font-size: 1.5rem; margin-bottom: 20px; display: block; }
+
+/* --- NUEVO: ÍCONOS ALINEADOS (FLEXBOX) --- */
+.card-title-group { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
+.card-title-group .icon-gold { color: var(--accent); font-size: 1.4rem; margin-bottom: 0; }
+.card-title-group h3 { font-family: var(--font-h); font-size: 1.15rem; font-weight: 600; color: #fff; margin-bottom: 0; }
+/* ----------------------------------------- */
+
+.proof-card p { color: var(--text-silver); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0; }
 
 /* FAQ */
 .faq-accordion { text-align: left; margin-top: 40px; }
 .faq-details { background: #0f0f0f; border: 1px solid rgba(255,255,255,0.03); margin-bottom: 10px; border-radius: 4px; }
-.faq-summary { display: flex; justify-content: space-between; padding: 20px; cursor: pointer; font-weight: 500; list-style: none; font-size: 0.95rem; }
-.faq-summary .icon { color: var(--accent); transition: 0.3s; }
+.faq-summary { display: flex; justify-content: space-between; padding: 20px; cursor: pointer; font-weight: 500; list-style: none; font-size: 0.95rem; line-height: 1.5; }
+.faq-summary .icon { color: var(--accent); transition: 0.3s; margin-left: 15px; flex-shrink: 0; }
 .faq-details[open] .icon { transform: rotate(45deg); }
 .faq-content { padding: 0 20px 20px; color: var(--text-silver); font-size: 0.95rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.02); margin-top: 10px; padding-top: 15px; }
 
@@ -65,7 +71,7 @@ main { background: var(--bg-spotlight); }
 .cta.solid { background: var(--text-pure); color: #000; }
 .cta.solid:hover { background: var(--accent); transform: translateY(-2px); }
 
-/* FORMULARIOS */
+/* FORMULARIOS (Para las subpáginas) */
 .purpose-box { background: #0f0f0f; padding: 60px 30px; border: 1px solid rgba(255,255,255,0.03); border-radius: 6px; max-width: 800px; margin: 0 auto; text-align: center; }
 .application-form { max-width: 800px; margin: 40px auto 0; text-align: left; }
 .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
