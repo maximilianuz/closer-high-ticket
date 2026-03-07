@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siguiente paso | Maximiliano.C</title>
+    <title>Reserva tu Sesión | Maximiliano.C</title>
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="background: var(--bg-spotlight); display: flex; align-items: center; justify-content: center; min-height: 100vh;">
-    <main class="section fade-in show" style="max-width: 800px; padding: 20px;">
-        <i class="fa-regular fa-circle-check" style="font-size: 4rem; color: var(--accent); margin-bottom: 25px;"></i>
+<body style="background: var(--bg-spotlight);">
+    <header class="navbar" style="justify-content: center;">
+        <a href="index.html" class="logo-link"><h2>MAXIMILIANO.C</h2></a>
+    </header>
+
+    <main class="section fade-in show" style="max-width: 800px; padding: 120px 20px 40px; text-align: center;">
+        <i class="fa-regular fa-circle-check" style="font-size: 3.5rem; color: var(--accent); margin-bottom: 25px;"></i>
         <p class="tagline">Paso 2 de 2: Agendamiento</p>
-        <h1 class="section-title">GRACIAS POR TU CONFIANZA</h1>
+        <h1 class="section-title">Información recibida.</h1>
         
-        <div style="background: rgba(209, 167, 81, 0.1); border-left: 3px solid var(--accent); padding: 25px; text-align: left; margin: 30px auto; max-width: 650px;">
-            <p style="color:#fff; margin-bottom:10px;">
+        <div style="background: rgba(209, 167, 81, 0.08); border-left: 3px solid var(--accent); padding: 25px; text-align: left; margin: 30px auto; max-width: 650px; border-radius: 4px;">
+            <p style="color:#fff; margin-bottom:8px;">
                 <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent); margin-right: 10px;"></i>
-                <b>ATENCIÓN: Tu sesión aún no está reservada.</b>
+                <strong>Importante: Tu espacio en la agenda aún no está reservado.</strong>
             </p>
-            <p style="font-size: 0.95rem; color: var(--text-silver);">Para finalizar el proceso y asegurar tu espacio, debés seleccionar fecha y hora en el calendario a continuación.</p>
+            <p style="font-size: 0.95rem; color: var(--text-silver); margin-bottom: 0;">
+                Para finalizar y que podamos tener nuestra charla, por favor elegí el día y horario en el calendario que aparece abajo.
+            </p>
         </div>
 
-        <p id="applicationSummary" style="color: var(--accent); margin-bottom: 30px; font-style: italic; font-family: var(--font-h);"></p>
+        <p id="applicationSummary" style="color: var(--accent); margin-bottom: 35px; font-style: italic; font-weight: 500; font-family: var(--font-h);"></p>
 
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="https://calendly.com/contacto-maximilianoc/30min" class="cta solid" target="_blank" rel="noopener">Completar Reserva en Calendly</a>
-            <a href="index.html" class="cta cta-secondary">Volver al inicio</a>
+        <div class="calendly-inline-widget" 
+             data-url="https://calendly.com/contacto-maximilianoc/30min" 
+             style="min-width:320px; height:700px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+        
+        <a href="index.html" class="cta cta-secondary" style="margin-top: 40px;">Volver al inicio</a>
     </main>
     <script src="script.js"></script>
 </body>
