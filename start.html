@@ -1,78 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación Estratégica | Maximiliano.C</title>
-    <meta name="description" content="Completa la aplicación estratégica para validar encaje y acceder al siguiente paso de evaluación con Maximiliano.C.">
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="canonical" href="https://maximilianoc.netlify.app/start.html">
 
-    <meta property="og:title" content="Aplicación Estratégica | Maximiliano.C">
-    <meta property="og:description" content="Diagnóstico breve para validar si existe encaje real antes de agendar.">
-    <meta property="og:image" content="assets/avatar.png">
-    <meta property="og:type" content="website">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Evaluación Comercial</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="css/styles.css">
+
 </head>
-<body class="subpage">
 
-    <header class="navbar">
-        <a href="index.html" class="logo-link"><h2>MAXIMILIANO.C</h2></a>
-        <nav><a href="index.html">Volver al Inicio</a></nav>
-    </header>
+<body>
 
-    <main>
-        <section class="hero fade-in">
-            <div class="hero-content" style="max-width: 900px; padding-top: 60px;">
-                <p class="tagline">Paso 1 de 2</p>
-                <h1 style="font-size: clamp(2.2rem, 5vw, 3.5rem); font-family: var(--font-h); font-weight: 400;">Aplicación de encaje estratégico.</h1>
-                <p class="intro-text" style="margin: 0 auto 40px auto;">
-                    Completá este diagnóstico breve para entender si existe viabilidad real. Si superamos este filtro lógico, accederás a mi calendario personal.
-                </p>
+<div class="container">
 
-                <div class="purpose-box" style="padding: 40px; margin-bottom: 40px; text-align: left;">
-                    <h3 style="font-family: var(--font-h); color: var(--accent); margin-bottom: 15px; font-size: 1.3rem;">Protocolo de Trabajo</h3>
-                    <p style="color: var(--text-silver); font-size: 0.95rem; margin-bottom: 0;">Este proceso está diseñado exclusivamente para profesionales que operan con tickets desde USD 1.000 y buscan escalar mediante un proceso consultivo libre de fricción.</p>
-                </div>
+<h2>Evaluación completa</h2>
 
-                <form class="application-form" id="applicationForm">
-                    <div class="form-grid">
-                        <label>Nombre y apellido <input type="text" name="nombre" autocomplete="name" required></label>
-                        <label>Email profesional <input type="email" name="email" autocomplete="email" required></label>
-                        <label>Nicho principal <input type="text" name="nicho" placeholder="Ej: Nutrición, Psicología, Fitness..." required></label>
-                        <label>Ticket promedio actual (USD) <input type="number" name="ticket" min="0" required></label>
-                        <label>Leads calificados por semana <input type="number" name="leads" min="0" required></label>
-                        <label>Mayor cuello de botella hoy
-                            <select name="cuello" required>
-                                <option value="" selected disabled>Seleccioná una opción</option>
-                                <option value="show-up">Asistencia a llamadas (No show)</option>
-                                <option value="cierre">Baja tasa de cierre</option>
-                                <option value="objeciones">Objeciones de precio o "lo voy a pensar"</option>
-                                <option value="seguimiento">Falta de seguimiento comercial</option>
-                            </select>
-                        </label>
-                    </div>
+<p>
 
-                    <label style="margin-top: 20px;">¿Qué objetivo exacto buscás conseguir en los próximos 90 días?
-                        <textarea name="objetivo" rows="4" required></textarea>
-                    </label>
+Agenda una conversación para analizar tu proceso comercial.
 
-                    <div id="formError" class="form-error-msg" role="alert" aria-live="polite"></div>
+</p>
 
-                    <button type="submit" class="cta solid" style="margin-top: 35px; width: 100%;" data-track="cta_form_continue">Evaluar Encaje y Continuar</button>
-                    <p class="cta-proof" style="margin-top: 20px; text-align: center;">Sin presión comercial • Privacidad absoluta</p>
-                </form>
-            </div>
-        </section>
-    </main>
+<a class="cta-primary" href="thanks.html">
 
-    <script src="script.js" defer></script>
+Continuar
+
+</a>
+
+</div>
+
 </body>
 </html>
