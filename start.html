@@ -3,52 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación Estratégica | Maximiliano.C</title>
+    <title>Evaluación Comercial | Maximiliano.C</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body style="background: var(--bg-spotlight);">
-    <header class="navbar" style="justify-content: center;">
-        <a href="index.html" class="logo-link"><h2>MAXIMILIANO.C</h2></a>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link"><h2>MAXIMILIANO.C</h2></a>
+        </div>
     </header>
 
     <main class="section fade-in show" style="padding-top: 140px;">
         <div class="centered-content" style="max-width: 700px;">
             <span class="tagline">Paso 1 de 2</span>
             <h1 class="section-title">Evaluación de sintonía comercial.</h1>
-            <p>Antes de agendar, necesito entender tu situación actual para asegurarme de que puedo aportar un valor real y medible a tu consulta o negocio.</p>
+            <p>Antes de conversar, necesito entender tu situación actual para confirmar que como tu socio puedo aportar un crecimiento medible a tu consulta.</p>
         </div>
 
         <form class="application-form" id="applicationForm">
             <div class="form-grid">
-                <label>Nombre y Apellido 
-                    <input type="text" name="nombre" required placeholder="Tu respuesta">
-                </label>
-                
-                <label>Email profesional 
-                    <input type="email" name="email" required placeholder="ejemplo@correo.com">
-                </label>
-                
-                <label>Profesión / Especialidad 
-                    <input type="text" name="nicho" placeholder="Ej: Entrenador Personal, Nutrición..." required>
-                </label>
-                
-                <label>Ticket promedio actual (USD) 
-                    <input type="number" name="ticket" required placeholder="Ej: 1200">
-                </label>
-                
-                <label>Tu perfil principal (IG, LinkedIn, Web) 
-                    <input type="url" name="red_social" required placeholder="https://...">
-                </label>
-                
-                <label>WhatsApp (Opcional - Contacto directo) 
-                    <input type="tel" name="whatsapp" placeholder="+54 9 ...">
-                </label>
+                <label>Nombre y Apellido <input type="text" name="nombre" required></label>
+                <label>Email profesional <input type="email" name="email" required></label>
+                <label>Profesión / Especialidad <input type="text" name="nicho" placeholder="Ej: Entrenador, Nutricionista..." required></label>
+                <label>Ticket promedio actual (USD) <input type="number" name="ticket" required></label>
+                <label>Link principal (IG, LinkedIn, Web) <input type="url" name="red_social" required></label>
+                <label>WhatsApp (Para contacto directo) <input type="tel" name="whatsapp" required></label>
             </div>
             
-            <label style="margin-top:15px;">¿Cuál sentís que es el mayor obstáculo al momento de vender tu servicio?
-                <textarea name="obstaculo" rows="4" required placeholder="Contame brevemente tu situación..."></textarea>
+            <label style="margin-top:15px;">¿Cuál sentís que es tu mayor obstáculo para vender hoy?
+                <textarea name="obstaculo" rows="4" required></textarea>
             </label>
 
             <div id="formError" class="form-error-msg"></div>
@@ -56,7 +40,6 @@
             <button type="submit" class="cta solid" style="width:100%; margin-top: 25px;">
                 Validar sintonía y continuar
             </button>
-            <p class="cta-proof" style="text-align: center; margin-top: 15px;">Privacidad absoluta • Proceso 100% seguro</p>
         </form>
     </main>
     <script src="script.js"></script>
