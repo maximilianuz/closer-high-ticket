@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Evaluación Comercial</title>
-
-<link rel="stylesheet" href="css/styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Sintonía | Maximiliano.C</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body style="background: var(--bg-spotlight);">
+    <header class="navbar" style="justify-content: center;">
+        <a href="index.html" class="logo-link"><h2>MAXIMILIANO.C</h2></a>
+    </header>
 
-<body>
+    <main class="section fade-in show" style="padding-top: 140px;">
+        <div class="centered-content" style="max-width: 700px;">
+            <p class="tagline">Paso 1 de 2</p>
+            <h1 class="section-title">Validación de sintonía comercial.</h1>
+            <p>Completá este diagnóstico breve para entender si existe compatibilidad real para trabajar juntos.</p>
+        </div>
 
-<div class="container">
+        <form class="application-form" id="applicationForm">
+            <div class="form-grid">
+                <label>Nombre completo <input type="text" name="nombre" required></label>
+                <label>Email profesional <input type="email" name="email" required></label>
+                <label>Nicho principal <input type="text" name="nicho" placeholder="Ej: Nutrición, Psicología..." required></label>
+                <label>Ticket promedio (USD) <input type="number" name="ticket" required></label>
+            </div>
+            <label style="margin-top:20px;">¿Cuál es tu mayor obstáculo comercial hoy?
+                <textarea name="cuello" rows="4" required></textarea>
+            </label>
+            <div id="formError" class="form-error-msg"></div>
+            <button type="submit" class="cta solid" style="width:100%;">Evaluar Compatibilidad y Continuar</button>
+        </form>
+    </main>
 
-<h2>Evaluación completa</h2>
-
-<p>
-
-Agenda una conversación para analizar tu proceso comercial.
-
-</p>
-
-<a class="cta-primary" href="thanks.html">
-
-Continuar
-
-</a>
-
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
